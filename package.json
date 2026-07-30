@@ -9,6 +9,10 @@
   },
   "scripts": {
     "scrape": "node src/index.js",
+    "export:csv": "node src/export-csv.js",
     "test": "node --test"
+  },
+  "dependencies": {
+    "playwright": "1.62.1"
   }
 }
