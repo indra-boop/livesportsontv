@@ -1,0 +1,52 @@
+name: Scrape LiveSportsOnTV
+
+on:
+  schedule:
+    # 16:00 UTC = 00:00 WITA (UTC+8)
+    - cron: "0 16 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: livesportsontv-scraper
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: "24"
+          package-manager-cache: false
+
+      - name: Run tests
+        run: npm test
+
+      - name: Scrape fixtures
+        env:
+          RONIN_API_TOKEN: ${{ secrets.RONIN_API_TOKEN }}
+          NUM_DAYS: "7"
+          OUTPUT_FILE: data/fixtures.json
+        run: npm run scrape
+
+      - name: Commit schedule changes
+        run: |
+          if git diff --quiet -- data/fixtures.json; then
+            echo "No schedule changes."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/fixtures.json
+          git commit -m "chore(data): update sports schedule"
+          git push
