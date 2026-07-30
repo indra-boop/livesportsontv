@@ -1,49 +1,63 @@
+import { chromium } from "playwright";
 import {
   loadStore,
   mergeFixtures,
-  normalizeFixture,
   SOURCE,
   writeStoreAtomic
 } from "./core.js";
 
-const API_BASE_URL =
-  process.env.API_BASE_URL || "https://api2.roninmedia.io/2";
-const API_TOKEN = process.env.RONIN_API_TOKEN;
-const NUM_DAYS = parseInteger(process.env.NUM_DAYS || "7", "NUM_DAYS", 1, 31);
+const SOURCE_URL = "https://www.livesportsontv.com/";
+const NUM_DAYS = parseInteger(process.env.NUM_DAYS || "7", "NUM_DAYS", 1, 10);
 const OUTPUT_FILE = process.env.OUTPUT_FILE || "data/fixtures.json";
-const MAX_ATTEMPTS = 3;
-
-if (!API_TOKEN) {
-  throw new Error("RONIN_API_TOKEN is required");
-}
+const NAVIGATION_TIMEOUT_MS = 60_000;
 
 const runAt = new Date();
-const rawFixtures = await fetchFixtures();
-const normalizedFixtures = rawFixtures
-  .map((fixture) => normalizeFixture(fixture, runAt.toISOString()))
-  .filter(Boolean);
+const browser = await chromium.launch({ headless: true });
+let scrapedFixtures;
 
-if (normalizedFixtures.length === 0) {
-  throw new Error(
-    `Empty result guard: API returned ${rawFixtures.length} raw fixtures and 0 valid fixtures`
-  );
+try {
+  const context = await browser.newContext({
+    locale: "en-US",
+    timezoneId: "Asia/Makassar",
+    userAgent:
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 " +
+      "(KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+  });
+  const page = await context.newPage();
+
+  await page.goto(SOURCE_URL, {
+    waitUntil: "domcontentloaded",
+    timeout: NAVIGATION_TIMEOUT_MS
+  });
+  await page.locator('a[href^="/match/"]').first().waitFor({
+    state: "visible",
+    timeout: NAVIGATION_TIMEOUT_MS
+  });
+
+  scrapedFixtures = await scrapeDays(page, runAt);
+} finally {
+  await browser.close();
+}
+
+if (scrapedFixtures.length === 0) {
+  throw new Error("Empty result guard: no visible fixtures were scraped");
 }
 
 const currentStore = await loadStore(OUTPUT_FILE);
 const mergedFixtures = mergeFixtures(
   currentStore.fixtures,
-  normalizedFixtures,
+  scrapedFixtures,
   runAt
 );
 
 await writeStoreAtomic(OUTPUT_FILE, {
   metadata: {
     source: SOURCE,
-    sourceUrl: "https://www.livesportsontv.com/",
+    sourceUrl: SOURCE_URL,
+    method: "rendered-html",
     generatedAt: runAt.toISOString(),
     windowDays: NUM_DAYS,
-    fetchedCount: rawFixtures.length,
-    validCount: normalizedFixtures.length,
+    scrapedCount: scrapedFixtures.length,
     storedCount: mergedFixtures.length,
     timezone: "UTC"
   },
@@ -51,57 +65,234 @@ await writeStoreAtomic(OUTPUT_FILE, {
 });
 
 console.log(
-  `Saved ${mergedFixtures.length} fixtures (${normalizedFixtures.length} valid from ${rawFixtures.length} fetched) to ${OUTPUT_FILE}`
+  `Saved ${mergedFixtures.length} fixtures (${scrapedFixtures.length} scraped) to ${OUTPUT_FILE}`
 );
 
-async function fetchFixtures() {
-  const url = new URL("/2/fixtures", API_BASE_URL);
-  url.searchParams.set("token", API_TOKEN);
-  url.searchParams.set("numDays", String(NUM_DAYS));
+async function scrapeDays(page, scrapedAt) {
+  const collected = new Map();
 
-  let lastError;
+  for (let dayIndex = 0; dayIndex < NUM_DAYS; dayIndex += 1) {
+    const dateButtons = page
+      .locator("button")
+      .filter({ hasText: /^(Sun|Mon|Tue|Wed|Thu|Fri|Sat)\d{2}$/ });
 
-  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt += 1) {
-    try {
-      const response = await fetch(url, {
-        headers: {
-          accept: "application/json",
-          "user-agent": "Jerco-LiveSportsOnTV-Scraper/1.0"
-        },
-        signal: AbortSignal.timeout(30_000)
-      });
-
-      if (!response.ok) {
-        throw new Error(`API returned HTTP ${response.status}`);
-      }
-
-      const contentType = response.headers.get("content-type") || "";
-      if (!contentType.toLowerCase().includes("application/json")) {
-        throw new Error(`Unexpected content-type: ${contentType || "missing"}`);
-      }
-
-      const payload = await response.json();
-      if (!Array.isArray(payload)) {
-        throw new Error("API response must be an array");
-      }
-
-      return payload;
-    } catch (error) {
-      lastError = error;
-      if (attempt === MAX_ATTEMPTS) break;
-
-      const delayMs = [5_000, 15_000][attempt - 1];
-      console.warn(
-        `Fetch attempt ${attempt}/${MAX_ATTEMPTS} failed: ${error.message}; retrying in ${delayMs / 1000}s`
-      );
-      await new Promise((resolve) => setTimeout(resolve, delayMs));
+    if ((await dateButtons.count()) < NUM_DAYS) {
+      throw new Error("Date navigation is missing or its DOM structure changed");
     }
+
+    const button = dateButtons.nth(dayIndex);
+    const buttonText = (await button.innerText()).trim();
+    const eventDate = addWitaDays(scrapedAt, dayIndex);
+
+    validateButtonDate(buttonText, eventDate);
+    await button.click({ force: true });
+    await page.waitForTimeout(1_200);
+
+    const rawEvents = await page.evaluate(() => {
+      const sportBlocks = [
+        ...document.querySelectorAll(
+          '[class*="FixtureListBySport_sport__"]'
+        )
+      ];
+      const output = [];
+
+      for (const sportBlock of sportBlocks) {
+        const sport =
+          sportBlock.querySelector(
+            '[class*="SectionDivider_label__"]'
+          )?.textContent?.trim() || "";
+        const leagueCards = [
+          ...sportBlock.querySelectorAll(':scope > [class*="Card_card__"]')
+        ];
+
+        for (const leagueCard of leagueCards) {
+          const league =
+            leagueCard.querySelector(
+              '[class*="LeagueCard_cardTitleLink__"]'
+            )?.textContent?.trim() || "";
+          const eventElements = [
+            ...leagueCard.querySelectorAll(
+              '[class*="FixtureItem_container__"]'
+            )
+          ];
+
+          for (const eventElement of eventElements) {
+            if (eventElement.getClientRects().length === 0) continue;
+
+            const link = eventElement.querySelector('a[href^="/match/"]');
+            const title = link?.getAttribute("aria-label")?.trim();
+            const href = link?.getAttribute("href");
+            const time =
+              eventElement.querySelector('[class*="FixtureItem_time__"]')
+                ?.textContent?.trim() || "";
+            const channelElements = [
+              ...eventElement.querySelectorAll(
+                '[class*="FixtureItem_channelChip__"]'
+              )
+            ];
+            const channels = channelElements
+              .map((element) => {
+                const name =
+                  element.querySelector(
+                    '[class*="FixtureItem_channelChipText__"]'
+                  )?.textContent?.trim() ||
+                  element.querySelector("img")?.getAttribute("alt")?.trim() ||
+                  "";
+                const channelLink = element.closest("a");
+
+                return {
+                  name,
+                  type: element.className.includes("nonStreaming")
+                    ? "tv"
+                    : "streaming",
+                  sourceUrl: channelLink?.href || null
+                };
+              })
+              .filter((channel) => channel.name);
+
+            if (title && href && time) {
+              output.push({
+                sport,
+                league,
+                title,
+                href,
+                time,
+                channels
+              });
+            }
+          }
+        }
+      }
+
+      return output;
+    });
+
+    let validForDay = 0;
+    for (const rawEvent of rawEvents) {
+      const normalized = normalizeRenderedEvent(
+        rawEvent,
+        eventDate,
+        scrapedAt.toISOString()
+      );
+      if (!normalized) continue;
+
+      collected.set(normalized.sourceKey, normalized);
+      validForDay += 1;
+    }
+
+    console.log(
+      `Day ${dayIndex + 1}/${NUM_DAYS} ${buttonText}: ${validForDay} fixtures`
+    );
   }
 
-  throw new Error(
-    `Unable to fetch fixtures after ${MAX_ATTEMPTS} attempts: ${lastError?.message}`,
-    { cause: lastError }
+  return [...collected.values()];
+}
+
+function normalizeRenderedEvent(rawEvent, eventDate, scrapedAt) {
+  const sourceId = rawEvent.href.match(/-(\d+)$/)?.[1];
+  const startAtUtc = parseWitaDateTime(eventDate, rawEvent.time);
+  if (!sourceId || !startAtUtc || !rawEvent.title || !rawEvent.sport) {
+    return null;
+  }
+
+  const [homeTeam, awayTeam] = splitTeams(rawEvent.title);
+  const channels = deduplicateChannels(rawEvent.channels).map(
+    (channel, index) => ({
+      id: `${sourceId}:${index + 1}`,
+      name: channel.name,
+      slug: null,
+      type: channel.type,
+      broadcastStartUtc: null,
+      sourceUrl: channel.sourceUrl
+    })
   );
+
+  return {
+    source: SOURCE,
+    sourceId,
+    sourceKey: `${SOURCE}:${sourceId}`,
+    title: rawEvent.title,
+    sport: rawEvent.sport,
+    sportSlug: slugify(rawEvent.sport),
+    league: rawEvent.league || null,
+    leagueSlug: rawEvent.league ? slugify(rawEvent.league) : null,
+    homeTeam,
+    awayTeam,
+    startAtUtc,
+    status: null,
+    venue: null,
+    channels,
+    sourceUpdatedAt: null,
+    scrapedAt,
+    sourceUrl: new URL(rawEvent.href, SOURCE_URL).href
+  };
+}
+
+function addWitaDays(date, days) {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Makassar",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).formatToParts(date);
+  const get = (type) =>
+    Number(parts.find((part) => part.type === type)?.value);
+  return new Date(Date.UTC(get("year"), get("month") - 1, get("day") + days));
+}
+
+function validateButtonDate(buttonText, date) {
+  const expectedDay = String(date.getUTCDate()).padStart(2, "0");
+  if (!buttonText.endsWith(expectedDay)) {
+    throw new Error(
+      `Date navigation mismatch: expected day ${expectedDay}, received ${buttonText}`
+    );
+  }
+}
+
+function parseWitaDateTime(date, text) {
+  const match = text.match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
+  if (!match) return null;
+
+  let hour = Number(match[1]) % 12;
+  if (match[3].toUpperCase() === "PM") hour += 12;
+  const minute = Number(match[2]);
+
+  return new Date(
+    Date.UTC(
+      date.getUTCFullYear(),
+      date.getUTCMonth(),
+      date.getUTCDate(),
+      hour - 8,
+      minute
+    )
+  ).toISOString();
+}
+
+function splitTeams(title) {
+  const separatorIndex = title.indexOf(" - ");
+  if (separatorIndex === -1) return [null, null];
+  return [
+    title.slice(0, separatorIndex).trim() || null,
+    title.slice(separatorIndex + 3).trim() || null
+  ];
+}
+
+function deduplicateChannels(channels) {
+  const unique = new Map();
+  for (const channel of Array.isArray(channels) ? channels : []) {
+    const key = channel.name.toLowerCase().replace(/[^a-z0-9]+/g, "");
+    if (key && !unique.has(key)) unique.set(key, channel);
+  }
+  return [...unique.values()];
+}
+
+function slugify(value) {
+  return value
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 }
 
 function parseInteger(value, name, minimum, maximum) {
