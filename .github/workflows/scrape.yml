@@ -28,25 +28,36 @@ jobs:
           node-version: "24"
           package-manager-cache: false
 
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
       - name: Run tests
         run: npm test
 
       - name: Scrape fixtures
         env:
-          RONIN_API_TOKEN: ${{ secrets.RONIN_API_TOKEN }}
           NUM_DAYS: "7"
           OUTPUT_FILE: data/fixtures.json
         run: npm run scrape
 
+      - name: Generate readable CSV
+        env:
+          INPUT_FILE: data/fixtures.json
+          CSV_OUTPUT_FILE: exports/LiveSportsOnTV-Schedule-WITA.csv
+        run: npm run export:csv
+
       - name: Commit schedule changes
         run: |
-          if git diff --quiet -- data/fixtures.json; then
+          if git diff --quiet -- data/fixtures.json exports/LiveSportsOnTV-Schedule-WITA.csv; then
             echo "No schedule changes."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/fixtures.json
+          git add data/fixtures.json exports/LiveSportsOnTV-Schedule-WITA.csv
           git commit -m "chore(data): update sports schedule"
           git push
