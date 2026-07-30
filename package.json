@@ -1,0 +1,14 @@
+{
+  "name": "jerco-livesportsontv-scraper",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Daily LiveSportsOnTV schedule ingestor with safe fixture upserts.",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "scrape": "node src/index.js",
+    "test": "node --test"
+  }
+}
