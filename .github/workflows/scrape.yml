@@ -4,6 +4,15 @@ on:
   schedule:
     # 16:00 UTC = 00:00 WITA (UTC+8)
     - cron: "0 16 * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - "src/**"
+      - "test/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/scrape.yml"
   workflow_dispatch:
 
 permissions:
@@ -16,7 +25,7 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
 
     steps:
       - name: Checkout repository
