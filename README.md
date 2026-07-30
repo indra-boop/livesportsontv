@@ -10,8 +10,7 @@ TV/streaming channels rendered on LiveSportsOnTV.
 - Supports manual execution through `workflow_dispatch`.
 - Upserts fixtures using `livesportsontv:{fixture_id}`.
 - Preserves existing future fixtures that temporarily disappear from the feed.
-- Refuses to write when the API returns an empty or invalid result.
-- Retries transient requests three times.
+- Refuses to write when scraping returns an empty or invalid result.
 - Keeps all stored timestamps in UTC.
 - Does not use `RONIN_API_TOKEN` or any private API credential.
 
