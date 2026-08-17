@@ -1,0 +1,88 @@
+name: Manual Country-Prefixed Scrape Once
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/manual-country-scrape-once.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: livesportsontv-scraper
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          package-manager-cache: false
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run tests
+        run: npm test
+
+      - name: Scrape fixtures
+        env:
+          NUM_DAYS: '7'
+          OUTPUT_FILE: data/fixtures.json
+        run: npm run scrape
+
+      - name: Generate readable CSV
+        env:
+          INPUT_FILE: data/fixtures.json
+          CSV_OUTPUT_FILE: exports/LiveSportsOnTV-Schedule-WITA.csv
+        run: npm run export:csv
+
+      - name: Verify country-prefixed output
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import csv
+          from pathlib import Path
+
+          path = Path('exports/LiveSportsOnTV-Schedule-WITA.csv')
+          with path.open(newline='', encoding='utf-8-sig') as f:
+              rows = list(csv.DictReader(f))
+          values = []
+          for row in rows:
+              for column in ('All Channels', 'Streaming Channels', 'TV Channels'):
+                  values.extend([part.strip() for part in row.get(column, '').split(',') if part.strip()])
+          if not values:
+              raise SystemExit('No channel values found in CSV')
+          bad = [value for value in values if not (value.startswith('[US] ') or value.startswith('[CA] '))]
+          if bad:
+              raise SystemExit(f'Unprefixed/unsupported country values: {bad[:5]}')
+          print(f'Country prefix verified on {len(values)} CSV channel values across {len(rows)} rows')
+          PY
+
+      - name: Commit schedule changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- data/fixtures.json exports/LiveSportsOnTV-Schedule-WITA.csv; then
+            echo 'No schedule changes.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/fixtures.json exports/LiveSportsOnTV-Schedule-WITA.csv
+          git commit -m 'chore(data): manual country-prefixed schedule update'
+          git push
