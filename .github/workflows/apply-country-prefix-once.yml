@@ -1,0 +1,215 @@
+name: Apply US CA Channel Prefix Once
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/apply-country-prefix-once.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          package-manager-cache: false
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Add country classifier and patch outputs
+        shell: bash
+        run: |
+          cat > src/channel-country.js <<'EOF'
+          const COUNTRY_PREFIX_RE = /^\[([A-Z]{2})\]\s*/i;
+
+          const CANADA_CHANNEL_PATTERNS = [
+            /\bCanada\b/i,
+            /\bCA$/i,
+            /^TSN(?:\b|\d|\+)/i,
+            /^RDS(?:\b|\d|\s|\+)/i,
+            /^Sportsnet(?:\b|\s|\+)/i,
+            /^SN\s+(?:World|NOW)\b/i,
+            /^CBC(?:\b|\s)/i,
+            /^CTV(?:\b|\d|\s)/i,
+            /^Citytv\b/i,
+            /^Global(?:\s+TV)?\b/i,
+            /^TLN\b/i,
+            /^OneSoccer\b/i,
+            /^CHEK\b/i,
+            /^CHCH\b/i,
+            /^Crave\b/i,
+            /^FOX Sports Racing\b/i,
+            /^NBA TV Canada\b/i,
+            /^NHL Network Canada\b/i,
+          ];
+
+          export function stripCountryPrefix(value) {
+            return String(value || '').replace(COUNTRY_PREFIX_RE, '').trim();
+          }
+
+          export function inferChannelCountryCode(value) {
+            const original = String(value || '').trim();
+            const explicitPrefix = original.match(COUNTRY_PREFIX_RE)?.[1]?.toUpperCase();
+            if (explicitPrefix === 'US' || explicitPrefix === 'CA') return explicitPrefix;
+
+            const name = stripCountryPrefix(original);
+            return CANADA_CHANNEL_PATTERNS.some((pattern) => pattern.test(name))
+              ? 'CA'
+              : 'US';
+          }
+
+          export function enrichChannelCountry(channel) {
+            const source = channel && typeof channel === 'object' ? channel : { name: channel };
+            const name = stripCountryPrefix(source.name || source.displayName || '');
+            const countryCode =
+              source.countryCode === 'US' || source.countryCode === 'CA'
+                ? source.countryCode
+                : inferChannelCountryCode(source.name || source.displayName || '');
+
+            return {
+              ...source,
+              name,
+              countryCode,
+              displayName: name ? `[${countryCode}] ${name}` : '',
+            };
+          }
+
+          export function displayChannelName(channel) {
+            return enrichChannelCountry(channel).displayName;
+          }
+          EOF
+
+          cat > test/channel-country.test.js <<'EOF'
+          import test from 'node:test';
+          import assert from 'node:assert/strict';
+          import {
+            displayChannelName,
+            enrichChannelCountry,
+            inferChannelCountryCode,
+          } from '../src/channel-country.js';
+
+          test('classifies explicit Canadian feeds', () => {
+            assert.equal(inferChannelCountryCode('DAZN Canada'), 'CA');
+            assert.equal(inferChannelCountryCode('TSN5'), 'CA');
+            assert.equal(inferChannelCountryCode('RDS 2'), 'CA');
+            assert.equal(inferChannelCountryCode('Sportsnet+'), 'CA');
+            assert.equal(inferChannelCountryCode('beIN SPORTS Xtra CA'), 'CA');
+          });
+
+          test('defaults non-Canadian LiveSportsOnTV channels to US market', () => {
+            assert.equal(inferChannelCountryCode('ESPN'), 'US');
+            assert.equal(inferChannelCountryCode('Peacock'), 'US');
+            assert.equal(inferChannelCountryCode('FOX Sports 2'), 'US');
+            assert.equal(inferChannelCountryCode('Paramount+'), 'US');
+          });
+
+          test('preserves raw name and creates idempotent display name', () => {
+            assert.deepEqual(enrichChannelCountry({ name: '[CA] TSN5' }), {
+              name: 'TSN5',
+              countryCode: 'CA',
+              displayName: '[CA] TSN5',
+            });
+            assert.equal(displayChannelName({ name: 'ESPN' }), '[US] ESPN');
+          });
+          EOF
+
+          python3 - <<'PY'
+          from pathlib import Path
+
+          def replace_once(text, old, new, label):
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f'{label}: expected exactly 1 match, got {count}')
+              return text.replace(old, new, 1)
+
+          index_path = Path('src/index.js')
+          index = index_path.read_text(encoding='utf-8')
+          index = replace_once(
+              index,
+              '} from "./core.js";\n\nconst SOURCE_URL',
+              '} from "./core.js";\nimport { enrichChannelCountry } from "./channel-country.js";\n\nconst SOURCE_URL',
+              'index import',
+          )
+          old_mapping = '''  const channels = deduplicateChannels(rawEvent.channels).map(
+            (channel, index) => ({
+              id: `${sourceId}:${index + 1}`,
+              name: channel.name,
+              slug: null,
+              type: channel.type,
+              broadcastStartUtc: null,
+              sourceUrl: channel.sourceUrl
+            })
+          );
+          '''
+          new_mapping = '''  const channels = deduplicateChannels(rawEvent.channels).map(
+            (channel, index) => {
+              const enriched = enrichChannelCountry(channel);
+              return {
+                id: `${sourceId}:${index + 1}`,
+                name: enriched.name,
+                countryCode: enriched.countryCode,
+                displayName: enriched.displayName,
+                slug: null,
+                type: channel.type,
+                broadcastStartUtc: null,
+                sourceUrl: channel.sourceUrl
+              };
+            }
+          );
+          '''
+          index = replace_once(index, old_mapping, new_mapping, 'channel object enrichment')
+          index_path.write_text(index, encoding='utf-8')
+
+          export_path = Path('src/export-csv.js')
+          export = export_path.read_text(encoding='utf-8')
+          export = replace_once(
+              export,
+              'import { dirname } from "node:path";\n',
+              'import { dirname } from "node:path";\nimport { displayChannelName } from "./channel-country.js";\n',
+              'export import',
+          )
+          count = export.count('.map((channel) => channel.name);')
+          if count != 2:
+              raise SystemExit(f'CSV type channel maps: expected 2 matches, got {count}')
+          export = export.replace(
+              '.map((channel) => channel.name);',
+              '.map((channel) => displayChannelName(channel));',
+          )
+          export = replace_once(
+              export,
+              'channels.map((channel) => channel.name).join(", "),',
+              'channels.map((channel) => displayChannelName(channel)).join(", "),',
+              'CSV all channels',
+          )
+          export_path.write_text(export, encoding='utf-8')
+          PY
+
+      - name: Validate implementation
+        run: |
+          node --check src/index.js
+          node --check src/export-csv.js
+          node --check src/channel-country.js
+          npm test
+
+      - name: Commit implementation
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/index.js src/export-csv.js src/channel-country.js test/channel-country.test.js
+          git diff --cached --check
+          git commit -m 'feat: add US CA country prefixes to channels'
+          git push
