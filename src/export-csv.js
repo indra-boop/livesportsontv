@@ -1,5 +1,6 @@
 import { readFile, mkdir, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
+import { displayChannelName } from "./channel-country.js";
 
 const INPUT_FILE = process.env.INPUT_FILE || "data/fixtures.json";
 const OUTPUT_FILE =
@@ -35,10 +36,10 @@ const rows = fixtures.map((fixture, index) => {
   const channels = Array.isArray(fixture.channels) ? fixture.channels : [];
   const streaming = channels
     .filter((channel) => channel.type === "streaming")
-    .map((channel) => channel.name);
+    .map((channel) => displayChannelName(channel));
   const television = channels
     .filter((channel) => channel.type !== "streaming")
-    .map((channel) => channel.name);
+    .map((channel) => displayChannelName(channel));
 
   return [
     index + 1,
@@ -52,7 +53,7 @@ const rows = fixtures.map((fixture, index) => {
     fixture.status || "",
     fixture.venue || "",
     channels.length,
-    channels.map((channel) => channel.name).join(", "),
+    channels.map((channel) => displayChannelName(channel)).join(", "),
     streaming.join(", "),
     television.join(", "),
     fixture.startAtUtc || "",

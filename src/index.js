@@ -5,6 +5,7 @@ import {
   SOURCE,
   writeStoreAtomic
 } from "./core.js";
+import { enrichChannelCountry } from "./channel-country.js";
 
 const SOURCE_URL = "https://www.livesportsontv.com/";
 const NUM_DAYS = parseInteger(process.env.NUM_DAYS || "7", "NUM_DAYS", 1, 10);
@@ -197,15 +198,20 @@ function normalizeRenderedEvent(rawEvent, eventDate, scrapedAt) {
 
   const [homeTeam, awayTeam] = splitTeams(rawEvent.title);
   const channels = deduplicateChannels(rawEvent.channels).map(
-    (channel, index) => ({
+  (channel, index) => {
+    const enriched = enrichChannelCountry(channel);
+    return {
       id: `${sourceId}:${index + 1}`,
-      name: channel.name,
+      name: enriched.name,
+      countryCode: enriched.countryCode,
+      displayName: enriched.displayName,
       slug: null,
       type: channel.type,
       broadcastStartUtc: null,
       sourceUrl: channel.sourceUrl
-    })
-  );
+    };
+  }
+);
 
   return {
     source: SOURCE,
