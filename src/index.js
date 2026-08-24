@@ -1,8 +1,11 @@
 import { chromium } from "playwright";
 import {
+  addUtcDays,
   loadStore,
   mergeFixtures,
+  resolveNavigationStart,
   SOURCE,
+  validateButtonDate,
   writeStoreAtomic
 } from "./core.js";
 import { enrichChannelCountry } from "./channel-country.js";
@@ -71,19 +74,21 @@ console.log(
 
 async function scrapeDays(page, scrapedAt) {
   const collected = new Map();
+  const dateButtons = page
+    .locator("button")
+    .filter({ hasText: /^(Sun|Mon|Tue|Wed|Thu|Fri|Sat)\s*\d{1,2}$/i });
+
+  if ((await dateButtons.count()) < NUM_DAYS) {
+    throw new Error("Date navigation is missing or its DOM structure changed");
+  }
+
+  const firstButtonText = (await dateButtons.first().innerText()).trim();
+  const navigationStart = resolveNavigationStart(firstButtonText, scrapedAt);
 
   for (let dayIndex = 0; dayIndex < NUM_DAYS; dayIndex += 1) {
-    const dateButtons = page
-      .locator("button")
-      .filter({ hasText: /^(Sun|Mon|Tue|Wed|Thu|Fri|Sat)\d{2}$/ });
-
-    if ((await dateButtons.count()) < NUM_DAYS) {
-      throw new Error("Date navigation is missing or its DOM structure changed");
-    }
-
     const button = dateButtons.nth(dayIndex);
     const buttonText = (await button.innerText()).trim();
-    const eventDate = addWitaDays(scrapedAt, dayIndex);
+    const eventDate = addUtcDays(navigationStart, dayIndex);
 
     validateButtonDate(buttonText, eventDate);
     await button.click({ force: true });
@@ -232,27 +237,6 @@ function normalizeRenderedEvent(rawEvent, eventDate, scrapedAt) {
     scrapedAt,
     sourceUrl: new URL(rawEvent.href, SOURCE_URL).href
   };
-}
-
-function addWitaDays(date, days) {
-  const parts = new Intl.DateTimeFormat("en-CA", {
-    timeZone: "Asia/Makassar",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit"
-  }).formatToParts(date);
-  const get = (type) =>
-    Number(parts.find((part) => part.type === type)?.value);
-  return new Date(Date.UTC(get("year"), get("month") - 1, get("day") + days));
-}
-
-function validateButtonDate(buttonText, date) {
-  const expectedDay = String(date.getUTCDate()).padStart(2, "0");
-  if (!buttonText.endsWith(expectedDay)) {
-    throw new Error(
-      `Date navigation mismatch: expected day ${expectedDay}, received ${buttonText}`
-    );
-  }
 }
 
 function parseWitaDateTime(date, text) {
