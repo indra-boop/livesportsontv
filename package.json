@@ -10,6 +10,7 @@
   "scripts": {
     "scrape": "node src/index.js",
     "export:csv": "node src/export-csv.js",
+    "ingest": "node src/ingest-dashboard.js",
     "test": "node --test"
   },
   "dependencies": {
