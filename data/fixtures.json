@@ -3,1883 +3,13 @@
     "source": "livesportsontv",
     "sourceUrl": "https://www.livesportsontv.com/",
     "method": "rendered-html",
-    "generatedAt": "2026-09-23T19:27:07.546Z",
+    "generatedAt": "2026-09-24T19:48:30.886Z",
     "windowDays": 7,
-    "scrapedCount": 190,
-    "storedCount": 845,
+    "scrapedCount": 111,
+    "storedCount": 825,
     "timezone": "UTC"
   },
   "fixtures": [
-    {
-      "source": "livesportsontv",
-      "sourceId": "1840137",
-      "sourceKey": "livesportsontv:1840137",
-      "title": "Barracas Central - Independiente Rivadavia",
-      "sport": "Soccer",
-      "sportSlug": "soccer",
-      "league": "Primera Division",
-      "leagueSlug": "primera-division",
-      "homeTeam": "Barracas Central",
-      "awayTeam": "Independiente Rivadavia",
-      "startAtUtc": "2026-09-21T22:00:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1840137:1",
-          "name": "Fanatiz",
-          "countryCode": "US",
-          "displayName": "[US] Fanatiz",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=fanatiz_lsot"
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/barracas-central-independiente-rivadavia-1840137"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1956338",
-      "sourceKey": "livesportsontv:1956338",
-      "title": "Louisville - Belmont",
-      "sport": "Soccer",
-      "sportSlug": "soccer",
-      "league": "College Soccer",
-      "leagueSlug": "college-soccer",
-      "homeTeam": "Louisville",
-      "awayTeam": "Belmont",
-      "startAtUtc": "2026-09-21T22:00:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1956338:1",
-          "name": "ESPN Unlimited",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Unlimited",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnunlimited_lsot"
-        },
-        {
-          "id": "1956338:2",
-          "name": "ACCNX",
-          "countryCode": "US",
-          "displayName": "[US] ACCNX",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/louisville-belmont-1956338"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1888359",
-      "sourceKey": "livesportsontv:1888359",
-      "title": "Baltimore Orioles - Toronto Blue Jays",
-      "sport": "Baseball",
-      "sportSlug": "baseball",
-      "league": "MLB",
-      "leagueSlug": "mlb",
-      "homeTeam": "Baltimore Orioles",
-      "awayTeam": "Toronto Blue Jays",
-      "startAtUtc": "2026-09-21T22:35:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1888359:1",
-          "name": "ESPN Unlimited",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Unlimited",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnunlimited_lsot"
-        },
-        {
-          "id": "1888359:2",
-          "name": "MLB.TV",
-          "countryCode": "US",
-          "displayName": "[US] MLB.TV",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1888359:3",
-          "name": "MASN",
-          "countryCode": "US",
-          "displayName": "[US] MASN",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1888359:4",
-          "name": "Sportsnet",
-          "countryCode": "CA",
-          "displayName": "[CA] Sportsnet",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1888359:5",
-          "name": "SN NOW",
-          "countryCode": "CA",
-          "displayName": "[CA] SN NOW",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.snnow.ca/"
-        },
-        {
-          "id": "1888359:6",
-          "name": "Show more",
-          "countryCode": "US",
-          "displayName": "[US] Show more",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/match/baltimore-orioles-toronto-blue-jays-1888359"
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/baltimore-orioles-toronto-blue-jays-1888359"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1888360",
-      "sourceKey": "livesportsontv:1888360",
-      "title": "Detroit Tigers - Washington Nationals",
-      "sport": "Baseball",
-      "sportSlug": "baseball",
-      "league": "MLB",
-      "leagueSlug": "mlb",
-      "homeTeam": "Detroit Tigers",
-      "awayTeam": "Washington Nationals",
-      "startAtUtc": "2026-09-21T22:40:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1888360:1",
-          "name": "MLB.TV",
-          "countryCode": "US",
-          "displayName": "[US] MLB.TV",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1888360:2",
-          "name": "Detroit SportsNet",
-          "countryCode": "US",
-          "displayName": "[US] Detroit SportsNet",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1888360:3",
-          "name": "Nationals.TV",
-          "countryCode": "US",
-          "displayName": "[US] Nationals.TV",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/detroit-tigers-washington-nationals-1888360"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1933124",
-      "sourceKey": "livesportsontv:1933124",
-      "title": "Pittsburgh Penguins - Buffalo Sabres",
-      "sport": "Ice Hockey",
-      "sportSlug": "ice-hockey",
-      "league": "NHL",
-      "leagueSlug": "nhl",
-      "homeTeam": "Pittsburgh Penguins",
-      "awayTeam": "Buffalo Sabres",
-      "startAtUtc": "2026-09-21T23:00:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1933124:1",
-          "name": "ESPN Select",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Select",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnplus_lsot"
-        },
-        {
-          "id": "1933124:2",
-          "name": "ESPN Unlimited",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Unlimited",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnunlimited_lsot"
-        },
-        {
-          "id": "1933124:3",
-          "name": "SportsNet Pittsburgh",
-          "countryCode": "CA",
-          "displayName": "[CA] SportsNet Pittsburgh",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1933124:4",
-          "name": "SN Pittsburgh +",
-          "countryCode": "US",
-          "displayName": "[US] SN Pittsburgh +",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1933124:5",
-          "name": "MSGSN",
-          "countryCode": "US",
-          "displayName": "[US] MSGSN",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1933124:6",
-          "name": "Show more",
-          "countryCode": "US",
-          "displayName": "[US] Show more",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/match/pittsburgh-penguins-buffalo-sabres-1933124"
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/pittsburgh-penguins-buffalo-sabres-1933124"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1933126",
-      "sourceKey": "livesportsontv:1933126",
-      "title": "New Jersey Devils - New York Rangers",
-      "sport": "Ice Hockey",
-      "sportSlug": "ice-hockey",
-      "league": "NHL",
-      "leagueSlug": "nhl",
-      "homeTeam": "New Jersey Devils",
-      "awayTeam": "New York Rangers",
-      "startAtUtc": "2026-09-21T23:00:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1933126:1",
-          "name": "ESPN Select",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Select",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnplus_lsot"
-        },
-        {
-          "id": "1933126:2",
-          "name": "ESPN Unlimited",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Unlimited",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnunlimited_lsot"
-        },
-        {
-          "id": "1933126:3",
-          "name": "MSGSN",
-          "countryCode": "US",
-          "displayName": "[US] MSGSN",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1933126:4",
-          "name": "Sportsnet+",
-          "countryCode": "CA",
-          "displayName": "[CA] Sportsnet+",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/new-jersey-devils-new-york-rangers-1933126"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1933127",
-      "sourceKey": "livesportsontv:1933127",
-      "title": "Washington Capitals - Philadelphia Flyers",
-      "sport": "Ice Hockey",
-      "sportSlug": "ice-hockey",
-      "league": "NHL",
-      "leagueSlug": "nhl",
-      "homeTeam": "Washington Capitals",
-      "awayTeam": "Philadelphia Flyers",
-      "startAtUtc": "2026-09-21T23:00:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1933127:1",
-          "name": "ESPN Select",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Select",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnplus_lsot"
-        },
-        {
-          "id": "1933127:2",
-          "name": "ESPN Unlimited",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Unlimited",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnunlimited_lsot"
-        },
-        {
-          "id": "1933127:3",
-          "name": "NBCS PHL",
-          "countryCode": "US",
-          "displayName": "[US] NBCS PHL",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1933127:4",
-          "name": "Monumental SN",
-          "countryCode": "US",
-          "displayName": "[US] Monumental SN",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1933127:5",
-          "name": "Sportsnet+",
-          "countryCode": "CA",
-          "displayName": "[CA] Sportsnet+",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/washington-capitals-philadelphia-flyers-1933127"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1933128",
-      "sourceKey": "livesportsontv:1933128",
-      "title": "Montreal Canadiens - Ottawa Senators",
-      "sport": "Ice Hockey",
-      "sportSlug": "ice-hockey",
-      "league": "NHL",
-      "leagueSlug": "nhl",
-      "homeTeam": "Montreal Canadiens",
-      "awayTeam": "Ottawa Senators",
-      "startAtUtc": "2026-09-21T23:00:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1933128:1",
-          "name": "Fubo Sports",
-          "countryCode": "US",
-          "displayName": "[US] Fubo Sports",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=fubo_lsot"
-        },
-        {
-          "id": "1933128:2",
-          "name": "NHL Network",
-          "countryCode": "US",
-          "displayName": "[US] NHL Network",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1933128:3",
-          "name": "SN One",
-          "countryCode": "US",
-          "displayName": "[US] SN One",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1933128:4",
-          "name": "SN NOW",
-          "countryCode": "CA",
-          "displayName": "[CA] SN NOW",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.snnow.ca/"
-        },
-        {
-          "id": "1933128:5",
-          "name": "TVA Sports 2",
-          "countryCode": "US",
-          "displayName": "[US] TVA Sports 2",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1933128:6",
-          "name": "Show more",
-          "countryCode": "US",
-          "displayName": "[US] Show more",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/match/montreal-canadiens-ottawa-senators-1933128"
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/montreal-canadiens-ottawa-senators-1933128"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1956339",
-      "sourceKey": "livesportsontv:1956339",
-      "title": "Georgetown - Evansville",
-      "sport": "Soccer",
-      "sportSlug": "soccer",
-      "league": "College Soccer",
-      "leagueSlug": "college-soccer",
-      "homeTeam": "Georgetown",
-      "awayTeam": "Evansville",
-      "startAtUtc": "2026-09-21T23:00:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1956339:1",
-          "name": "ESPN Select",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Select",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnplus_lsot"
-        },
-        {
-          "id": "1956339:2",
-          "name": "ESPN Unlimited",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Unlimited",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnunlimited_lsot"
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/georgetown-evansville-1956339"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1971199",
-      "sourceKey": "livesportsontv:1971199",
-      "title": "Ohio State - Washington",
-      "sport": "Soccer",
-      "sportSlug": "soccer",
-      "league": "College Soccer",
-      "leagueSlug": "college-soccer",
-      "homeTeam": "Ohio State",
-      "awayTeam": "Washington",
-      "startAtUtc": "2026-09-21T23:00:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1971199:1",
-          "name": "Big Ten Network",
-          "countryCode": "US",
-          "displayName": "[US] Big Ten Network",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/ohio-state-washington-1971199"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1869555",
-      "sourceKey": "livesportsontv:1869555",
-      "title": "New York Liberty - Atlanta Dream",
-      "sport": "Basketball",
-      "sportSlug": "basketball",
-      "league": "WNBA",
-      "leagueSlug": "wnba",
-      "homeTeam": "New York Liberty",
-      "awayTeam": "Atlanta Dream",
-      "startAtUtc": "2026-09-22T00:00:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1869555:1",
-          "name": "Peacock",
-          "countryCode": "US",
-          "displayName": "[US] Peacock",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=peacock_lsot"
-        },
-        {
-          "id": "1869555:2",
-          "name": "NBCS Network",
-          "countryCode": "US",
-          "displayName": "[US] NBCS Network",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1869555:3",
-          "name": "My9",
-          "countryCode": "US",
-          "displayName": "[US] My9",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1869555:4",
-          "name": "Atlanta News First",
-          "countryCode": "US",
-          "displayName": "[US] Atlanta News First",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1869555:5",
-          "name": "Liberty Live",
-          "countryCode": "US",
-          "displayName": "[US] Liberty Live",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1869555:6",
-          "name": "Show more",
-          "countryCode": "US",
-          "displayName": "[US] Show more",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/match/new-york-liberty-atlanta-dream-1869555"
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/new-york-liberty-atlanta-dream-1869555"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1933130",
-      "sourceKey": "livesportsontv:1933130",
-      "title": "Chicago Blackhawks - Minnesota Wild",
-      "sport": "Ice Hockey",
-      "sportSlug": "ice-hockey",
-      "league": "NHL",
-      "leagueSlug": "nhl",
-      "homeTeam": "Chicago Blackhawks",
-      "awayTeam": "Minnesota Wild",
-      "startAtUtc": "2026-09-22T00:00:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1933130:1",
-          "name": "ESPN Select",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Select",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnplus_lsot"
-        },
-        {
-          "id": "1933130:2",
-          "name": "ESPN Unlimited",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Unlimited",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnunlimited_lsot"
-        },
-        {
-          "id": "1933130:3",
-          "name": "CHSN",
-          "countryCode": "US",
-          "displayName": "[US] CHSN",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1933130:4",
-          "name": "Sportsnet+",
-          "countryCode": "CA",
-          "displayName": "[CA] Sportsnet+",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/chicago-blackhawks-minnesota-wild-1933130"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1933131",
-      "sourceKey": "livesportsontv:1933131",
-      "title": "Dallas Stars - St. Louis Blues",
-      "sport": "Ice Hockey",
-      "sportSlug": "ice-hockey",
-      "league": "NHL",
-      "leagueSlug": "nhl",
-      "homeTeam": "Dallas Stars",
-      "awayTeam": "St. Louis Blues",
-      "startAtUtc": "2026-09-22T00:00:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1933131:1",
-          "name": "Blues App",
-          "countryCode": "US",
-          "displayName": "[US] Blues App",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-20T18:29:45.382Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/dallas-stars-st-louis-blues-1933131"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1956340",
-      "sourceKey": "livesportsontv:1956340",
-      "title": "New Mexico State - New Mexico",
-      "sport": "Volleyball",
-      "sportSlug": "volleyball",
-      "league": "Women's College Volleyball",
-      "leagueSlug": "women-s-college-volleyball",
-      "homeTeam": "New Mexico State",
-      "awayTeam": "New Mexico",
-      "startAtUtc": "2026-09-22T00:00:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1956340:1",
-          "name": "ESPN Select",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Select",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnplus_lsot"
-        },
-        {
-          "id": "1956340:2",
-          "name": "ESPN Unlimited",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Unlimited",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnunlimited_lsot"
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-20T18:29:45.382Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/new-mexico-state-new-mexico-1956340"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1957792",
-      "sourceKey": "livesportsontv:1957792",
-      "title": "New Mexico State - New Mexico",
-      "sport": "Soccer",
-      "sportSlug": "soccer",
-      "league": "Women's College Soccer",
-      "leagueSlug": "women-s-college-soccer",
-      "homeTeam": "New Mexico State",
-      "awayTeam": "New Mexico",
-      "startAtUtc": "2026-09-22T00:00:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1957792:1",
-          "name": "ESPN Select",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Select",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnplus_lsot"
-        },
-        {
-          "id": "1957792:2",
-          "name": "ESPN Unlimited",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Unlimited",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnunlimited_lsot"
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-20T18:29:45.382Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/new-mexico-state-new-mexico-1957792"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1969596",
-      "sourceKey": "livesportsontv:1969596",
-      "title": "Dominica - Anguilla",
-      "sport": "Soccer",
-      "sportSlug": "soccer",
-      "league": "International Friendly",
-      "leagueSlug": "international-friendly",
-      "homeTeam": "Dominica",
-      "awayTeam": "Anguilla",
-      "startAtUtc": "2026-09-22T00:00:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1969596:1",
-          "name": "DAZN",
-          "countryCode": "US",
-          "displayName": "[US] DAZN",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=dazn_lsot"
-        },
-        {
-          "id": "1969596:2",
-          "name": "DAZN Canada",
-          "countryCode": "CA",
-          "displayName": "[CA] DAZN Canada",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=dazn_ca_lsot"
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-20T18:29:45.382Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/dominica-vs-anguilla-1969596"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1840143",
-      "sourceKey": "livesportsontv:1840143",
-      "title": "Lanús - Estudiantes",
-      "sport": "Soccer",
-      "sportSlug": "soccer",
-      "league": "Primera Division",
-      "leagueSlug": "primera-division",
-      "homeTeam": "Lanús",
-      "awayTeam": "Estudiantes",
-      "startAtUtc": "2026-09-22T00:15:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1840143:1",
-          "name": "Fanatiz",
-          "countryCode": "US",
-          "displayName": "[US] Fanatiz",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=fanatiz_lsot"
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/lanus-estudiantes-1840143"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1894735",
-      "sourceKey": "livesportsontv:1894735",
-      "title": "Los Angeles Rams - New York Giants",
-      "sport": "Football",
-      "sportSlug": "football",
-      "league": "NFL",
-      "leagueSlug": "nfl",
-      "homeTeam": "Los Angeles Rams",
-      "awayTeam": "New York Giants",
-      "startAtUtc": "2026-09-22T00:15:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1894735:1",
-          "name": "Fubo Sports",
-          "countryCode": "US",
-          "displayName": "[US] Fubo Sports",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=fubo_lsot"
-        },
-        {
-          "id": "1894735:2",
-          "name": "ESPN Unlimited",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Unlimited",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnunlimitednfl_lsot"
-        },
-        {
-          "id": "1894735:3",
-          "name": "ABC",
-          "countryCode": "US",
-          "displayName": "[US] ABC",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1894735:4",
-          "name": "ESPN",
-          "countryCode": "US",
-          "displayName": "[US] ESPN",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1894735:5",
-          "name": "ESPN2",
-          "countryCode": "US",
-          "displayName": "[US] ESPN2",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1894735:6",
-          "name": "Show more",
-          "countryCode": "US",
-          "displayName": "[US] Show more",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/match/los-angeles-rams-new-york-giants-1894735"
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/los-angeles-rams-new-york-giants-1894735"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1957793",
-      "sourceKey": "livesportsontv:1957793",
-      "title": "Utah Tech - Utah Valley",
-      "sport": "Soccer",
-      "sportSlug": "soccer",
-      "league": "Women's College Soccer",
-      "leagueSlug": "women-s-college-soccer",
-      "homeTeam": "Utah Tech",
-      "awayTeam": "Utah Valley",
-      "startAtUtc": "2026-09-22T01:00:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1957793:1",
-          "name": "MW+",
-          "countryCode": "US",
-          "displayName": "[US] MW+",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/utah-tech-utah-valley-1957793"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1888361",
-      "sourceKey": "livesportsontv:1888361",
-      "title": "San Francisco Giants - Minnesota Twins",
-      "sport": "Baseball",
-      "sportSlug": "baseball",
-      "league": "MLB",
-      "leagueSlug": "mlb",
-      "homeTeam": "San Francisco Giants",
-      "awayTeam": "Minnesota Twins",
-      "startAtUtc": "2026-09-22T01:45:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1888361:1",
-          "name": "MLB.TV",
-          "countryCode": "US",
-          "displayName": "[US] MLB.TV",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1888361:2",
-          "name": "MLB Network",
-          "countryCode": "US",
-          "displayName": "[US] MLB Network",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1888361:3",
-          "name": "NBCS Bay Area",
-          "countryCode": "US",
-          "displayName": "[US] NBCS Bay Area",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1888361:4",
-          "name": "Twins.TV",
-          "countryCode": "US",
-          "displayName": "[US] Twins.TV",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1888361:5",
-          "name": "SN NOW",
-          "countryCode": "CA",
-          "displayName": "[CA] SN NOW",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.snnow.ca/"
-        },
-        {
-          "id": "1888361:6",
-          "name": "Show more",
-          "countryCode": "US",
-          "displayName": "[US] Show more",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/match/san-francisco-giants-minnesota-twins-1888361"
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/san-francisco-giants-minnesota-twins-1888361"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1869556",
-      "sourceKey": "livesportsontv:1869556",
-      "title": "Phoenix Mercury - Dallas Wings",
-      "sport": "Basketball",
-      "sportSlug": "basketball",
-      "league": "WNBA",
-      "leagueSlug": "wnba",
-      "homeTeam": "Phoenix Mercury",
-      "awayTeam": "Dallas Wings",
-      "startAtUtc": "2026-09-22T02:00:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1869556:1",
-          "name": "USA Network",
-          "countryCode": "US",
-          "displayName": "[US] USA Network",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1869556:2",
-          "name": "AZ Family Sports",
-          "countryCode": "US",
-          "displayName": "[US] AZ Family Sports",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1869556:3",
-          "name": "Merc+",
-          "countryCode": "US",
-          "displayName": "[US] Merc+",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1869556:4",
-          "name": "KFAA 29",
-          "countryCode": "US",
-          "displayName": "[US] KFAA 29",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1869556:5",
-          "name": "TSN2",
-          "countryCode": "CA",
-          "displayName": "[CA] TSN2",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/phoenix-mercury-dallas-wings-1869556"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1964383",
-      "sourceKey": "livesportsontv:1964383",
-      "title": "Singapore Open",
-      "sport": "Tennis",
-      "sportSlug": "tennis",
-      "league": "WTA",
-      "leagueSlug": "wta",
-      "homeTeam": null,
-      "awayTeam": null,
-      "startAtUtc": "2026-09-22T03:00:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1964383:1",
-          "name": "Tennis Channel",
-          "countryCode": "US",
-          "displayName": "[US] Tennis Channel",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1964383:2",
-          "name": "DAZN Canada",
-          "countryCode": "CA",
-          "displayName": "[CA] DAZN Canada",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=dazn_ca_lsot"
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/singapore-open-1964383"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1964384",
-      "sourceKey": "livesportsontv:1964384",
-      "title": "Singapore Open",
-      "sport": "Tennis",
-      "sportSlug": "tennis",
-      "league": "WTA",
-      "leagueSlug": "wta",
-      "homeTeam": null,
-      "awayTeam": null,
-      "startAtUtc": "2026-09-22T05:00:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1964384:1",
-          "name": "Tennis Channel",
-          "countryCode": "US",
-          "displayName": "[US] Tennis Channel",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/singapore-open-1964384"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1972922",
-      "sourceKey": "livesportsontv:1972922",
-      "title": "Singapore Open",
-      "sport": "Tennis",
-      "sportSlug": "tennis",
-      "league": "WTA",
-      "leagueSlug": "wta",
-      "homeTeam": null,
-      "awayTeam": null,
-      "startAtUtc": "2026-09-22T06:30:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1972922:1",
-          "name": "Tennis Channel",
-          "countryCode": "US",
-          "displayName": "[US] Tennis Channel",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/singapore-open-1972922"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1842531",
-      "sourceKey": "livesportsontv:1842531",
-      "title": "Fukuoka - Seibu Lions",
-      "sport": "Baseball",
-      "sportSlug": "baseball",
-      "league": "NPB",
-      "leagueSlug": "npb",
-      "homeTeam": "Fukuoka",
-      "awayTeam": "Seibu Lions",
-      "startAtUtc": "2026-09-22T09:00:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1842531:1",
-          "name": "Next Level Sports",
-          "countryCode": "US",
-          "displayName": "[US] Next Level Sports",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/fukuoka-seibu-lions-1842531"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1964385",
-      "sourceKey": "livesportsontv:1964385",
-      "title": "Singapore Open",
-      "sport": "Tennis",
-      "sportSlug": "tennis",
-      "league": "WTA",
-      "leagueSlug": "wta",
-      "homeTeam": null,
-      "awayTeam": null,
-      "startAtUtc": "2026-09-22T10:30:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1964385:1",
-          "name": "Tennis Channel",
-          "countryCode": "US",
-          "displayName": "[US] Tennis Channel",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/singapore-open-1964385"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1969629",
-      "sourceKey": "livesportsontv:1969629",
-      "title": "Singapore Open",
-      "sport": "Tennis",
-      "sportSlug": "tennis",
-      "league": "WTA",
-      "leagueSlug": "wta",
-      "homeTeam": null,
-      "awayTeam": null,
-      "startAtUtc": "2026-09-22T12:25:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1969629:1",
-          "name": "Tennis Channel",
-          "countryCode": "US",
-          "displayName": "[US] Tennis Channel",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/singapore-open-1969629"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1969628",
-      "sourceKey": "livesportsontv:1969628",
-      "title": "Road World Championships",
-      "sport": "Cycling",
-      "sportSlug": "cycling",
-      "league": "Men's Road Cycling",
-      "leagueSlug": "men-s-road-cycling",
-      "homeTeam": null,
-      "awayTeam": null,
-      "startAtUtc": "2026-09-22T12:30:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1969628:1",
-          "name": "FloSports",
-          "countryCode": "US",
-          "displayName": "[US] FloSports",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1969628:2",
-          "name": "CBC Gem",
-          "countryCode": "CA",
-          "displayName": "[CA] CBC Gem",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/road-world-championships-1969628"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1919988",
-      "sourceKey": "livesportsontv:1919988",
-      "title": "DC Power FC - Fort Lauderdale United",
-      "sport": "Soccer",
-      "sportSlug": "soccer",
-      "league": "USL Super League",
-      "leagueSlug": "usl-super-league",
-      "homeTeam": "DC Power FC",
-      "awayTeam": "Fort Lauderdale United",
-      "startAtUtc": "2026-09-22T15:00:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1919988:1",
-          "name": "Peacock",
-          "countryCode": "US",
-          "displayName": "[US] Peacock",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=peacock_lsot"
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/dc-power-fc-fort-lauderdale-united-1919988"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1966334",
-      "sourceKey": "livesportsontv:1966334",
-      "title": "Road World Championships",
-      "sport": "Cycling",
-      "sportSlug": "cycling",
-      "league": "Men's Road Cycling",
-      "leagueSlug": "men-s-road-cycling",
-      "homeTeam": null,
-      "awayTeam": null,
-      "startAtUtc": "2026-09-22T16:15:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1966334:1",
-          "name": "FloSports",
-          "countryCode": "US",
-          "displayName": "[US] FloSports",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1966334:2",
-          "name": "CBC Gem",
-          "countryCode": "CA",
-          "displayName": "[CA] CBC Gem",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/road-world-championships-1966334"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1964252",
-      "sourceKey": "livesportsontv:1964252",
-      "title": "Bayern München - Manchester City",
-      "sport": "Soccer",
-      "sportSlug": "soccer",
-      "league": "UEFA Women's Champions League",
-      "leagueSlug": "uefa-women-s-champions-league",
-      "homeTeam": "Bayern München",
-      "awayTeam": "Manchester City",
-      "startAtUtc": "2026-09-22T16:45:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1964252:1",
-          "name": "Fubo Sports",
-          "countryCode": "US",
-          "displayName": "[US] Fubo Sports",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=fubo_lsot"
-        },
-        {
-          "id": "1964252:2",
-          "name": "ESPN Unlimited",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Unlimited",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnunlimited_lsot"
-        },
-        {
-          "id": "1964252:3",
-          "name": "Paramount+",
-          "countryCode": "US",
-          "displayName": "[US] Paramount+",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1964252:4",
-          "name": "CBSSN",
-          "countryCode": "US",
-          "displayName": "[US] CBSSN",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1964252:5",
-          "name": "ESPN Deportes",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Deportes",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/bayern-munchen-manchester-city-1964252"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1964275",
-      "sourceKey": "livesportsontv:1964275",
-      "title": "Inter Milan - BK Häcken",
-      "sport": "Soccer",
-      "sportSlug": "soccer",
-      "league": "UEFA Women's Champions League",
-      "leagueSlug": "uefa-women-s-champions-league",
-      "homeTeam": "Inter Milan",
-      "awayTeam": "BK Häcken",
-      "startAtUtc": "2026-09-22T16:45:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1964275:1",
-          "name": "ESPN Select",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Select",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnplus_lsot"
-        },
-        {
-          "id": "1964275:2",
-          "name": "ESPN Unlimited",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Unlimited",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnunlimited_lsot"
-        },
-        {
-          "id": "1964275:3",
-          "name": "Paramount+",
-          "countryCode": "US",
-          "displayName": "[US] Paramount+",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/inter-milan-bk-hacken-1964275"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1895160",
-      "sourceKey": "livesportsontv:1895160",
-      "title": "New York Yankees - Tampa Bay Rays",
-      "sport": "Baseball",
-      "sportSlug": "baseball",
-      "league": "MLB",
-      "leagueSlug": "mlb",
-      "homeTeam": "New York Yankees",
-      "awayTeam": "Tampa Bay Rays",
-      "startAtUtc": "2026-09-22T17:05:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1895160:1",
-          "name": "ESPN Unlimited",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Unlimited",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnunlimited_lsot"
-        },
-        {
-          "id": "1895160:2",
-          "name": "MLB.TV",
-          "countryCode": "US",
-          "displayName": "[US] MLB.TV",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1895160:3",
-          "name": "YES",
-          "countryCode": "US",
-          "displayName": "[US] YES",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1895160:4",
-          "name": "Rays.TV",
-          "countryCode": "US",
-          "displayName": "[US] Rays.TV",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1895160:5",
-          "name": "SN One",
-          "countryCode": "US",
-          "displayName": "[US] SN One",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1895160:6",
-          "name": "Show more",
-          "countryCode": "US",
-          "displayName": "[US] Show more",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/match/new-york-yankees-tampa-bay-rays-1895160"
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/new-york-yankees-tampa-bay-rays-1895160"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1966191",
-      "sourceKey": "livesportsontv:1966191",
-      "title": "Real Madrid - PSG",
-      "sport": "Soccer",
-      "sportSlug": "soccer",
-      "league": "UEFA Women's Champions League",
-      "leagueSlug": "uefa-women-s-champions-league",
-      "homeTeam": "Real Madrid",
-      "awayTeam": "PSG",
-      "startAtUtc": "2026-09-22T19:00:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1966191:1",
-          "name": "ESPN Select",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Select",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnplus_lsot"
-        },
-        {
-          "id": "1966191:2",
-          "name": "ESPN Unlimited",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Unlimited",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnunlimited_lsot"
-        },
-        {
-          "id": "1966191:3",
-          "name": "Paramount+",
-          "countryCode": "US",
-          "displayName": "[US] Paramount+",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1966191:4",
-          "name": "CBS Golazo Network",
-          "countryCode": "US",
-          "displayName": "[US] CBS Golazo Network",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/real-madrid-paris-saint-germain-1966191"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1966192",
-      "sourceKey": "livesportsontv:1966192",
-      "title": "Juventus - SL Benfica",
-      "sport": "Soccer",
-      "sportSlug": "soccer",
-      "league": "UEFA Women's Champions League",
-      "leagueSlug": "uefa-women-s-champions-league",
-      "homeTeam": "Juventus",
-      "awayTeam": "SL Benfica",
-      "startAtUtc": "2026-09-22T19:00:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1966192:1",
-          "name": "ESPN Select",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Select",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnplus_lsot"
-        },
-        {
-          "id": "1966192:2",
-          "name": "ESPN Unlimited",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Unlimited",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnunlimited_lsot"
-        },
-        {
-          "id": "1966192:3",
-          "name": "Paramount+",
-          "countryCode": "US",
-          "displayName": "[US] Paramount+",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/juventus-benfica-1966192"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1966193",
-      "sourceKey": "livesportsontv:1966193",
-      "title": "Arsenal - HB Køge",
-      "sport": "Soccer",
-      "sportSlug": "soccer",
-      "league": "UEFA Women's Champions League",
-      "leagueSlug": "uefa-women-s-champions-league",
-      "homeTeam": "Arsenal",
-      "awayTeam": "HB Køge",
-      "startAtUtc": "2026-09-22T19:00:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1966193:1",
-          "name": "Fubo Sports",
-          "countryCode": "US",
-          "displayName": "[US] Fubo Sports",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=fubo_lsot"
-        },
-        {
-          "id": "1966193:2",
-          "name": "ESPN Unlimited",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Unlimited",
-          "slug": null,
-          "type": "streaming",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnunlimited_lsot"
-        },
-        {
-          "id": "1966193:3",
-          "name": "Paramount+",
-          "countryCode": "US",
-          "displayName": "[US] Paramount+",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1966193:4",
-          "name": "CBSSN",
-          "countryCode": "US",
-          "displayName": "[US] CBSSN",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1966193:5",
-          "name": "ESPN Deportes",
-          "countryCode": "US",
-          "displayName": "[US] ESPN Deportes",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1966193:6",
-          "name": "Show more",
-          "countryCode": "US",
-          "displayName": "[US] Show more",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": "https://www.livesportsontv.com/match/arsenal-hb-kge-1966193"
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/arsenal-hb-kge-1966193"
-    },
-    {
-      "source": "livesportsontv",
-      "sourceId": "1966335",
-      "sourceKey": "livesportsontv:1966335",
-      "title": "Road World Championships",
-      "sport": "Cycling",
-      "sportSlug": "cycling",
-      "league": "Women's Road Cycling",
-      "leagueSlug": "women-s-road-cycling",
-      "homeTeam": null,
-      "awayTeam": null,
-      "startAtUtc": "2026-09-22T19:15:00.000Z",
-      "status": null,
-      "venue": null,
-      "channels": [
-        {
-          "id": "1966335:1",
-          "name": "FloSports",
-          "countryCode": "US",
-          "displayName": "[US] FloSports",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1966335:2",
-          "name": "CBC Gem",
-          "countryCode": "CA",
-          "displayName": "[CA] CBC Gem",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
-        }
-      ],
-      "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-22T19:34:47.361Z",
-      "sourceUrl": "https://www.livesportsontv.com/match/road-world-championships-1966335"
-    },
     {
       "source": "livesportsontv",
       "sourceId": "1957535",
@@ -9807,7 +7937,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/bkfc-fight-night-2-1965666"
     },
     {
@@ -9847,7 +7977,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/qatar-bahrain-1969650"
     },
     {
@@ -9897,7 +8027,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/kansas-city-royals-chicago-white-sox-1889070"
     },
     {
@@ -9957,7 +8087,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/chicago-cubs-miami-marlins-1889071"
     },
     {
@@ -10021,13 +8151,13 @@
           "countryCode": "CA",
           "displayName": "[CA] SN NOW",
           "slug": null,
-          "type": "streaming",
+          "type": "tv",
           "broadcastStartUtc": null,
-          "sourceUrl": "https://www.snnow.ca/"
+          "sourceUrl": null
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/texas-rangers-new-york-mets-1889072"
     },
     {
@@ -10057,7 +8187,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/liechtenstein-lithuania-1907803"
     },
     {
@@ -10087,7 +8217,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/austria-israel-1907814"
     },
     {
@@ -10117,7 +8247,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/kosovo-republic-of-ireland-1907815"
     },
     {
@@ -10157,7 +8287,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/netherlands-germany-1907862"
     },
     {
@@ -10207,7 +8337,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/norway-denmark-1907863"
     },
     {
@@ -10247,7 +8377,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/portugal-wales-1907864"
     },
     {
@@ -10297,7 +8427,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/serbia-greece-1907865"
     },
     {
@@ -10337,7 +8467,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/ivory-coast-ghana-1953397"
     },
     {
@@ -10367,7 +8497,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/sierra-leone-zimbabwe-1953415"
     },
     {
@@ -10407,8 +8537,48 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/cameroon-comoros-1953438"
+    },
+    {
+      "source": "livesportsontv",
+      "sourceId": "1967392",
+      "sourceKey": "livesportsontv:1967392",
+      "title": "Puerto Rico - Guyana",
+      "sport": "Soccer",
+      "sportSlug": "soccer",
+      "league": "CONCACAF Nations League",
+      "leagueSlug": "concacaf-nations-league",
+      "homeTeam": "Puerto Rico",
+      "awayTeam": "Guyana",
+      "startAtUtc": "2026-09-24T19:00:00.000Z",
+      "status": null,
+      "venue": null,
+      "channels": [
+        {
+          "id": "1967392:1",
+          "name": "FOX One",
+          "countryCode": "US",
+          "displayName": "[US] FOX One",
+          "slug": null,
+          "type": "tv",
+          "broadcastStartUtc": null,
+          "sourceUrl": null
+        },
+        {
+          "id": "1967392:2",
+          "name": "Tubi",
+          "countryCode": "US",
+          "displayName": "[US] Tubi",
+          "slug": null,
+          "type": "tv",
+          "broadcastStartUtc": null,
+          "sourceUrl": null
+        }
+      ],
+      "sourceUpdatedAt": null,
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
+      "sourceUrl": "https://www.livesportsontv.com/match/puerto-rico-guyana-1967392"
     },
     {
       "source": "livesportsontv",
@@ -10457,7 +8627,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/colorado-rockies-arizona-diamondbacks-1889073"
     },
     {
@@ -10497,7 +8667,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/eastern-kentucky-austin-peay-1957909"
     },
     {
@@ -10577,8 +8747,48 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/the-citadel-unc-greensboro-1957911"
+    },
+    {
+      "source": "livesportsontv",
+      "sourceId": "1973291",
+      "sourceKey": "livesportsontv:1973291",
+      "title": "North Dakota - North Dakota State",
+      "sport": "Soccer",
+      "sportSlug": "soccer",
+      "league": "Women's College Soccer",
+      "leagueSlug": "women-s-college-soccer",
+      "homeTeam": "North Dakota",
+      "awayTeam": "North Dakota State",
+      "startAtUtc": "2026-09-24T20:00:00.000Z",
+      "status": null,
+      "venue": null,
+      "channels": [
+        {
+          "id": "1973291:1",
+          "name": "SLN",
+          "countryCode": "US",
+          "displayName": "[US] SLN",
+          "slug": null,
+          "type": "tv",
+          "broadcastStartUtc": null,
+          "sourceUrl": null
+        },
+        {
+          "id": "1973291:2",
+          "name": "Midco Sports Plus",
+          "countryCode": "US",
+          "displayName": "[US] Midco Sports Plus",
+          "slug": null,
+          "type": "tv",
+          "broadcastStartUtc": null,
+          "sourceUrl": null
+        }
+      ],
+      "sourceUpdatedAt": null,
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
+      "sourceUrl": "https://www.livesportsontv.com/match/north-dakota-north-dakota-state-1973291"
     },
     {
       "source": "livesportsontv",
@@ -10617,7 +8827,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/richmond-duquesne-1957912"
     },
     {
@@ -10657,8 +8867,68 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/merrimack-lindenwood-1967597"
+    },
+    {
+      "source": "livesportsontv",
+      "sourceId": "1973292",
+      "sourceKey": "livesportsontv:1973292",
+      "title": "Green Bay - Detroit Mercy",
+      "sport": "Soccer",
+      "sportSlug": "soccer",
+      "league": "Women's College Soccer",
+      "leagueSlug": "women-s-college-soccer",
+      "homeTeam": "Green Bay",
+      "awayTeam": "Detroit Mercy",
+      "startAtUtc": "2026-09-24T21:00:00.000Z",
+      "status": null,
+      "venue": null,
+      "channels": [
+        {
+          "id": "1973292:1",
+          "name": "YouTube",
+          "countryCode": "US",
+          "displayName": "[US] YouTube",
+          "slug": null,
+          "type": "tv",
+          "broadcastStartUtc": null,
+          "sourceUrl": null
+        }
+      ],
+      "sourceUpdatedAt": null,
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
+      "sourceUrl": "https://www.livesportsontv.com/match/green-bay-detroit-mercy-1973292"
+    },
+    {
+      "source": "livesportsontv",
+      "sourceId": "1974591",
+      "sourceKey": "livesportsontv:1974591",
+      "title": "4-Crown Nationals at Eldora Speedway",
+      "sport": "Motorsports",
+      "sportSlug": "motorsports",
+      "league": "Other",
+      "leagueSlug": "other",
+      "homeTeam": null,
+      "awayTeam": null,
+      "startAtUtc": "2026-09-24T21:45:00.000Z",
+      "status": null,
+      "venue": null,
+      "channels": [
+        {
+          "id": "1974591:1",
+          "name": "FloRacing",
+          "countryCode": "US",
+          "displayName": "[US] FloRacing",
+          "slug": null,
+          "type": "tv",
+          "broadcastStartUtc": null,
+          "sourceUrl": null
+        }
+      ],
+      "sourceUpdatedAt": null,
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
+      "sourceUrl": "https://www.livesportsontv.com/match/4-crown-nationals-at-eldora-speedway-1974591"
     },
     {
       "source": "livesportsontv",
@@ -10687,7 +8957,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/penn-state-ohio-state-1957525"
     },
     {
@@ -10727,7 +8997,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/boston-college-california-1957913"
     },
     {
@@ -10767,7 +9037,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/florida-texas-1957914"
     },
     {
@@ -10807,7 +9077,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/george-mason-fordham-1957915"
     },
     {
@@ -10847,8 +9117,48 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/old-dominion-louisiana-1957916"
+    },
+    {
+      "source": "livesportsontv",
+      "sourceId": "1957917",
+      "sourceKey": "livesportsontv:1957917",
+      "title": "West Georgia - North Alabama",
+      "sport": "Soccer",
+      "sportSlug": "soccer",
+      "league": "Women's College Soccer",
+      "leagueSlug": "women-s-college-soccer",
+      "homeTeam": "West Georgia",
+      "awayTeam": "North Alabama",
+      "startAtUtc": "2026-09-24T22:00:00.000Z",
+      "status": null,
+      "venue": null,
+      "channels": [
+        {
+          "id": "1957917:1",
+          "name": "ESPN Select",
+          "countryCode": "US",
+          "displayName": "[US] ESPN Select",
+          "slug": null,
+          "type": "streaming",
+          "broadcastStartUtc": null,
+          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnplus_lsot"
+        },
+        {
+          "id": "1957917:2",
+          "name": "ESPN Unlimited",
+          "countryCode": "US",
+          "displayName": "[US] ESPN Unlimited",
+          "slug": null,
+          "type": "streaming",
+          "broadcastStartUtc": null,
+          "sourceUrl": "https://www.livesportsontv.com/go?channel=espnunlimited_lsot"
+        }
+      ],
+      "sourceUpdatedAt": null,
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
+      "sourceUrl": "https://www.livesportsontv.com/match/west-georgia-north-alabama-1957917"
     },
     {
       "source": "livesportsontv",
@@ -10887,7 +9197,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/ucf-kansas-state-1957960"
     },
     {
@@ -10927,7 +9237,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/bowling-green-miami-oh-1957961"
     },
     {
@@ -10967,7 +9277,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/marshall-georgia-state-1957962"
     },
     {
@@ -11017,8 +9327,48 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/hampton-elon-1967200"
+    },
+    {
+      "source": "livesportsontv",
+      "sourceId": "1974840",
+      "sourceKey": "livesportsontv:1974840",
+      "title": "Howard - Coppin State",
+      "sport": "Volleyball",
+      "sportSlug": "volleyball",
+      "league": "Women's College Volleyball",
+      "leagueSlug": "women-s-college-volleyball",
+      "homeTeam": "Howard",
+      "awayTeam": "Coppin State",
+      "startAtUtc": "2026-09-24T22:00:00.000Z",
+      "status": null,
+      "venue": null,
+      "channels": [
+        {
+          "id": "1974840:1",
+          "name": "Prime Video",
+          "countryCode": "US",
+          "displayName": "[US] Prime Video",
+          "slug": null,
+          "type": "tv",
+          "broadcastStartUtc": null,
+          "sourceUrl": null
+        },
+        {
+          "id": "1974840:2",
+          "name": "Ryz Sports Network",
+          "countryCode": "US",
+          "displayName": "[US] Ryz Sports Network",
+          "slug": null,
+          "type": "tv",
+          "broadcastStartUtc": null,
+          "sourceUrl": null
+        }
+      ],
+      "sourceUpdatedAt": null,
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
+      "sourceUrl": "https://www.livesportsontv.com/match/coppin-state-at-howard-1974840"
     },
     {
       "source": "livesportsontv",
@@ -11067,7 +9417,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/philadelphia-phillies-milwaukee-brewers-1889074"
     },
     {
@@ -11147,7 +9497,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/boston-red-sox-cleveland-guardians-1889075"
     },
     {
@@ -11207,7 +9557,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/connecticut-sun-toronto-tempo-1889378"
     },
     {
@@ -11237,7 +9587,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/north-bay-battalion-brampton-steelheads-1908144"
     },
     {
@@ -11277,6 +9627,16 @@
         },
         {
           "id": "1933145:3",
+          "name": "NBCS PHL",
+          "countryCode": "US",
+          "displayName": "[US] NBCS PHL",
+          "slug": null,
+          "type": "tv",
+          "broadcastStartUtc": null,
+          "sourceUrl": null
+        },
+        {
+          "id": "1933145:4",
           "name": "NBCS PHL Plus",
           "countryCode": "US",
           "displayName": "[US] NBCS PHL Plus",
@@ -11286,7 +9646,7 @@
           "sourceUrl": null
         },
         {
-          "id": "1933145:4",
+          "id": "1933145:5",
           "name": "NESN Plus",
           "countryCode": "US",
           "displayName": "[US] NESN Plus",
@@ -11296,18 +9656,18 @@
           "sourceUrl": null
         },
         {
-          "id": "1933145:5",
-          "name": "Sportsnet+",
-          "countryCode": "CA",
-          "displayName": "[CA] Sportsnet+",
+          "id": "1933145:6",
+          "name": "Show more",
+          "countryCode": "US",
+          "displayName": "[US] Show more",
           "slug": null,
           "type": "tv",
           "broadcastStartUtc": null,
-          "sourceUrl": null
+          "sourceUrl": "https://www.livesportsontv.com/match/philadelphia-flyers-boston-bruins-1933145"
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/philadelphia-flyers-boston-bruins-1933145"
     },
     {
@@ -11387,7 +9747,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/detroit-red-wings-buffalo-sabres-1933146"
     },
     {
@@ -11467,7 +9827,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/tampa-bay-lightning-florida-panthers-1933147"
     },
     {
@@ -11527,7 +9887,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/carolina-hurricanes-nashville-predators-1933148"
     },
     {
@@ -11587,7 +9947,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/new-york-rangers-new-jersey-devils-1933149"
     },
     {
@@ -11637,7 +9997,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/tuskegee-benedict-college-1956330"
     },
     {
@@ -11667,7 +10027,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/purdue-maryland-1957532"
     },
     {
@@ -11697,7 +10057,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/indiana-ucla-1957533"
     },
     {
@@ -11737,7 +10097,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/north-alabama-abilene-christian-1957963"
     },
     {
@@ -11777,7 +10137,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/little-rock-austin-peay-1957964"
     },
     {
@@ -11817,7 +10177,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/central-arkansas-eastern-kentucky-1957965"
     },
     {
@@ -11887,7 +10247,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/aliquippa-at-new-castle-1966454"
     },
     {
@@ -11917,7 +10277,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/south-park-maritimetapestrycsat-1972590"
     },
     {
@@ -11971,9 +10331,9 @@
           "countryCode": "CA",
           "displayName": "[CA] SN NOW",
           "slug": null,
-          "type": "streaming",
+          "type": "tv",
           "broadcastStartUtc": null,
-          "sourceUrl": "https://www.snnow.ca/"
+          "sourceUrl": null
         },
         {
           "id": "1889076:5",
@@ -11997,7 +10357,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/new-york-yankees-tampa-bay-rays-1889076"
     },
     {
@@ -12027,7 +10387,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/peterborough-petes-sarnia-sting-1908145"
     },
     {
@@ -12107,7 +10467,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/atlanta-braves-cincinnati-reds-1889077"
     },
     {
@@ -12157,7 +10517,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/washington-mystics-chicago-sky-1869562"
     },
     {
@@ -12227,7 +10587,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/coastal-carolina-liberty-1948952"
     },
     {
@@ -12257,8 +10617,48 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/cy-falls-at-cy-fair-1966455"
+    },
+    {
+      "source": "livesportsontv",
+      "sourceId": "1973116",
+      "sourceKey": "livesportsontv:1973116",
+      "title": "Milwaukee Milkmen - Kansas City Monarchs",
+      "sport": "Baseball",
+      "sportSlug": "baseball",
+      "league": "AAPB",
+      "leagueSlug": "aapb",
+      "homeTeam": "Milwaukee Milkmen",
+      "awayTeam": "Kansas City Monarchs",
+      "startAtUtc": "2026-09-24T23:35:00.000Z",
+      "status": null,
+      "venue": null,
+      "channels": [
+        {
+          "id": "1973116:1",
+          "name": "Prime Video",
+          "countryCode": "US",
+          "displayName": "[US] Prime Video",
+          "slug": null,
+          "type": "tv",
+          "broadcastStartUtc": null,
+          "sourceUrl": null
+        },
+        {
+          "id": "1973116:2",
+          "name": "Ryz Sports Network",
+          "countryCode": "US",
+          "displayName": "[US] Ryz Sports Network",
+          "slug": null,
+          "type": "tv",
+          "broadcastStartUtc": null,
+          "sourceUrl": null
+        }
+      ],
+      "sourceUpdatedAt": null,
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
+      "sourceUrl": "https://www.livesportsontv.com/match/milwaukee-milkmen-kansas-city-monarchs-1973116"
     },
     {
       "source": "livesportsontv",
@@ -12297,7 +10697,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/memphis-redbirds-rochester-red-wings-1971904"
     },
     {
@@ -12327,7 +10727,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/minnesota-lynx-indiana-fever-1869563"
     },
     {
@@ -12387,7 +10787,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/st-louis-blues-chicago-blackhawks-1933151"
     },
     {
@@ -12417,7 +10817,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/carroll-at-flour-bluff-1966456"
     },
     {
@@ -12457,8 +10857,78 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/dominican-republic-nicaragua-1967393"
+    },
+    {
+      "source": "livesportsontv",
+      "sourceId": "1973115",
+      "sourceKey": "livesportsontv:1973115",
+      "title": "Leander - Cedar Park",
+      "sport": "Football",
+      "sportSlug": "football",
+      "league": "High School Football",
+      "leagueSlug": "high-school-football",
+      "homeTeam": "Leander",
+      "awayTeam": "Cedar Park",
+      "startAtUtc": "2026-09-25T00:00:00.000Z",
+      "status": null,
+      "venue": null,
+      "channels": [
+        {
+          "id": "1973115:1",
+          "name": "MyTV",
+          "countryCode": "US",
+          "displayName": "[US] MyTV",
+          "slug": null,
+          "type": "tv",
+          "broadcastStartUtc": null,
+          "sourceUrl": null
+        }
+      ],
+      "sourceUpdatedAt": null,
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
+      "sourceUrl": "https://www.livesportsontv.com/match/leander-cedar-park-1973115"
+    },
+    {
+      "source": "livesportsontv",
+      "sourceId": "1967394",
+      "sourceKey": "livesportsontv:1967394",
+      "title": "Cayman Islands - Dominica",
+      "sport": "Soccer",
+      "sportSlug": "soccer",
+      "league": "CONCACAF Nations League",
+      "leagueSlug": "concacaf-nations-league",
+      "homeTeam": "Cayman Islands",
+      "awayTeam": "Dominica",
+      "startAtUtc": "2026-09-25T00:10:00.000Z",
+      "status": null,
+      "venue": null,
+      "channels": [
+        {
+          "id": "1967394:1",
+          "name": "FOX One",
+          "countryCode": "US",
+          "displayName": "[US] FOX One",
+          "slug": null,
+          "type": "tv",
+          "broadcastStartUtc": null,
+          "sourceUrl": null
+        },
+        {
+          "id": "1967394:2",
+          "name": "Tubi",
+          "countryCode": "US",
+          "displayName": "[US] Tubi",
+          "slug": null,
+          "type": "tv",
+          "broadcastStartUtc": null,
+          "sourceUrl": null
+        }
+      ],
+      "sourceUpdatedAt": null,
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
+      "sourceUrl": "https://www.livesportsontv.com/match/cayman-islands-dominica-1967394"
     },
     {
       "source": "livesportsontv",
@@ -12487,6 +10957,36 @@
         },
         {
           "id": "1894736:2",
+          "name": "WITI-FOX",
+          "countryCode": "US",
+          "displayName": "[US] WITI-FOX",
+          "slug": null,
+          "type": "tv",
+          "broadcastStartUtc": null,
+          "sourceUrl": null
+        },
+        {
+          "id": "1894736:3",
+          "name": "WAGA-FOX",
+          "countryCode": "US",
+          "displayName": "[US] WAGA-FOX",
+          "slug": null,
+          "type": "tv",
+          "broadcastStartUtc": null,
+          "sourceUrl": null
+        },
+        {
+          "id": "1894736:4",
+          "name": "WGBA-NBC",
+          "countryCode": "US",
+          "displayName": "[US] WGBA-NBC",
+          "slug": null,
+          "type": "tv",
+          "broadcastStartUtc": null,
+          "sourceUrl": null
+        },
+        {
+          "id": "1894736:5",
           "name": "RDS",
           "countryCode": "CA",
           "displayName": "[CA] RDS",
@@ -12496,28 +10996,18 @@
           "sourceUrl": null
         },
         {
-          "id": "1894736:3",
-          "name": "TSN1",
-          "countryCode": "CA",
-          "displayName": "[CA] TSN1",
+          "id": "1894736:6",
+          "name": "Show more",
+          "countryCode": "US",
+          "displayName": "[US] Show more",
           "slug": null,
           "type": "tv",
           "broadcastStartUtc": null,
-          "sourceUrl": null
-        },
-        {
-          "id": "1894736:4",
-          "name": "TSN3",
-          "countryCode": "CA",
-          "displayName": "[CA] TSN3",
-          "slug": null,
-          "type": "tv",
-          "broadcastStartUtc": null,
-          "sourceUrl": null
+          "sourceUrl": "https://www.livesportsontv.com/match/green-bay-packers-atlanta-falcons-1894736"
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/green-bay-packers-atlanta-falcons-1894736"
     },
     {
@@ -12547,7 +11037,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/haiti-trinidad-and-tobago-1967395"
     },
     {
@@ -12641,13 +11131,13 @@
           "countryCode": "CA",
           "displayName": "[CA] SN NOW",
           "slug": null,
-          "type": "streaming",
+          "type": "tv",
           "broadcastStartUtc": null,
-          "sourceUrl": "https://www.snnow.ca/"
+          "sourceUrl": null
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/vancouver-canucks-edmonton-oilers-1933153"
     },
     {
@@ -12687,7 +11177,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/uc-irvine-california-baptist-1957907"
     },
     {
@@ -12717,7 +11207,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/american-fork-at-lone-peak-1972591"
     },
     {
@@ -12797,7 +11287,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/athletics-houston-astros-1889078"
     },
     {
@@ -12857,7 +11347,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/seattle-mariners-los-angeles-angels-1889079"
     },
     {
@@ -12937,7 +11427,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/seattle-kraken-calgary-flames-1933152"
     },
     {
@@ -12997,7 +11487,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/los-angeles-sparks-golden-state-valkyries-1869564"
     },
     {
@@ -13067,8 +11557,68 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/phoenix-mercury-las-vegas-aces-1869565"
+    },
+    {
+      "source": "livesportsontv",
+      "sourceId": "1907970",
+      "sourceKey": "livesportsontv:1907970",
+      "title": "Municipal - Suchitepéquez",
+      "sport": "Soccer",
+      "sportSlug": "soccer",
+      "league": "Liga Nacional",
+      "leagueSlug": "liga-nacional",
+      "homeTeam": "Municipal",
+      "awayTeam": "Suchitepéquez",
+      "startAtUtc": "2026-09-25T02:00:00.000Z",
+      "status": null,
+      "venue": null,
+      "channels": [
+        {
+          "id": "1907970:1",
+          "name": "FOX Deportes",
+          "countryCode": "US",
+          "displayName": "[US] FOX Deportes",
+          "slug": null,
+          "type": "tv",
+          "broadcastStartUtc": null,
+          "sourceUrl": null
+        }
+      ],
+      "sourceUpdatedAt": null,
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
+      "sourceUrl": "https://www.livesportsontv.com/match/municipal-suchitepequez-1907970"
+    },
+    {
+      "source": "livesportsontv",
+      "sourceId": "1933154",
+      "sourceKey": "livesportsontv:1933154",
+      "title": "San Jose Sharks - Anaheim Ducks",
+      "sport": "Ice Hockey",
+      "sportSlug": "ice-hockey",
+      "league": "NHL",
+      "leagueSlug": "nhl",
+      "homeTeam": "San Jose Sharks",
+      "awayTeam": "Anaheim Ducks",
+      "startAtUtc": "2026-09-25T02:00:00.000Z",
+      "status": null,
+      "venue": null,
+      "channels": [
+        {
+          "id": "1933154:1",
+          "name": "NBCS CA",
+          "countryCode": "CA",
+          "displayName": "[CA] NBCS CA",
+          "slug": null,
+          "type": "tv",
+          "broadcastStartUtc": null,
+          "sourceUrl": null
+        }
+      ],
+      "sourceUpdatedAt": null,
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
+      "sourceUrl": "https://www.livesportsontv.com/match/san-jose-sharks-anaheim-ducks-1933154"
     },
     {
       "source": "livesportsontv",
@@ -13147,7 +11697,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/vegas-golden-knights-utah-mammoth-1933155"
     },
     {
@@ -13207,7 +11757,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/costa-rica-curacao-1967396"
     },
     {
@@ -13247,7 +11797,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/las-vegas-aviators-oklahoma-city-comets-1967576"
     },
     {
@@ -13277,7 +11827,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/essendon-bombers-west-coast-eagles-1971868"
     },
     {
@@ -13357,7 +11907,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/los-angeles-dodgers-san-diego-padres-1889080"
     },
     {
@@ -13387,7 +11937,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/korea-open-1967032"
     },
     {
@@ -13427,7 +11977,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/western-bulldogs-port-adelaide-power-1971866"
     },
     {
@@ -13467,7 +12017,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/azerbaijan-grand-prix-1971246"
     },
     {
@@ -13497,7 +12047,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/chengdu-open-1971202"
     },
     {
@@ -13527,7 +12077,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/singapore-open-1971239"
     },
     {
@@ -13557,7 +12107,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/korea-open-1971799"
     },
     {
@@ -13587,7 +12137,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/hangzhou-open-1971203"
     },
     {
@@ -13627,7 +12177,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/carlton-blues-richmond-tigers-1971867"
     },
     {
@@ -13667,7 +12217,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/northern-kahu-tauranga-whai-1972592"
     },
     {
@@ -13697,7 +12247,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/azerbaijan-grand-prix-1827285"
     },
     {
@@ -13727,8 +12277,78 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/seibu-lions-chiba-lotte-marines-1842539"
+    },
+    {
+      "source": "livesportsontv",
+      "sourceId": "1974760",
+      "sourceKey": "livesportsontv:1974760",
+      "title": "Bangladesh - Malaysia",
+      "sport": "Soccer",
+      "sportSlug": "soccer",
+      "league": "ASEAN Cup",
+      "leagueSlug": "asean-cup",
+      "homeTeam": "Bangladesh",
+      "awayTeam": "Malaysia",
+      "startAtUtc": "2026-09-25T09:00:00.000Z",
+      "status": null,
+      "venue": null,
+      "channels": [
+        {
+          "id": "1974760:1",
+          "name": "DAZN",
+          "countryCode": "US",
+          "displayName": "[US] DAZN",
+          "slug": null,
+          "type": "streaming",
+          "broadcastStartUtc": null,
+          "sourceUrl": "https://www.livesportsontv.com/go?channel=dazn_lsot"
+        },
+        {
+          "id": "1974760:2",
+          "name": "DAZN Canada",
+          "countryCode": "CA",
+          "displayName": "[CA] DAZN Canada",
+          "slug": null,
+          "type": "streaming",
+          "broadcastStartUtc": null,
+          "sourceUrl": "https://www.livesportsontv.com/go?channel=dazn_ca_lsot"
+        }
+      ],
+      "sourceUpdatedAt": null,
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
+      "sourceUrl": "https://www.livesportsontv.com/match/bangladesh-malaysia-1974760"
+    },
+    {
+      "source": "livesportsontv",
+      "sourceId": "1974845",
+      "sourceKey": "livesportsontv:1974845",
+      "title": "Spain - Czechia",
+      "sport": "Tennis",
+      "sportSlug": "tennis",
+      "league": "Billie Jean King Cup",
+      "leagueSlug": "billie-jean-king-cup",
+      "homeTeam": "Spain",
+      "awayTeam": "Czechia",
+      "startAtUtc": "2026-09-25T09:00:00.000Z",
+      "status": null,
+      "venue": null,
+      "channels": [
+        {
+          "id": "1974845:1",
+          "name": "T2",
+          "countryCode": "US",
+          "displayName": "[US] T2",
+          "slug": null,
+          "type": "tv",
+          "broadcastStartUtc": null,
+          "sourceUrl": null
+        }
+      ],
+      "sourceUpdatedAt": null,
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
+      "sourceUrl": "https://www.livesportsontv.com/match/spain-czechia-1974845"
     },
     {
       "source": "livesportsontv",
@@ -13757,8 +12377,48 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/melbourne-demons-north-melbourne-kangaroos-1971869"
+    },
+    {
+      "source": "livesportsontv",
+      "sourceId": "1972470",
+      "sourceKey": "livesportsontv:1972470",
+      "title": "Dolphins - Sydney Roosters",
+      "sport": "Rugby League",
+      "sportSlug": "rugby-league",
+      "league": "NRL",
+      "leagueSlug": "nrl",
+      "homeTeam": "Dolphins",
+      "awayTeam": "Sydney Roosters",
+      "startAtUtc": "2026-09-25T09:50:00.000Z",
+      "status": null,
+      "venue": null,
+      "channels": [
+        {
+          "id": "1972470:1",
+          "name": "Fubo Sports",
+          "countryCode": "US",
+          "displayName": "[US] Fubo Sports",
+          "slug": null,
+          "type": "streaming",
+          "broadcastStartUtc": null,
+          "sourceUrl": "https://www.livesportsontv.com/go?channel=fubo_lsot"
+        },
+        {
+          "id": "1972470:2",
+          "name": "FOX Sports 2",
+          "countryCode": "US",
+          "displayName": "[US] FOX Sports 2",
+          "slug": null,
+          "type": "tv",
+          "broadcastStartUtc": null,
+          "sourceUrl": null
+        }
+      ],
+      "sourceUpdatedAt": null,
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
+      "sourceUrl": "https://www.livesportsontv.com/match/dolphins-sydney-roosters-1972470"
     },
     {
       "source": "livesportsontv",
@@ -13797,7 +12457,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/azerbaijan-grand-prix-1964869"
     },
     {
@@ -13847,7 +12507,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/open-de-france-1952840"
     },
     {
@@ -13887,7 +12547,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/laver-cup-1967380"
     },
     {
@@ -13947,7 +12607,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/azerbaijan-grand-prix-1721161"
     },
     {
@@ -13977,8 +12637,38 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/laver-cup-1971018"
+    },
+    {
+      "source": "livesportsontv",
+      "sourceId": "1953495",
+      "sourceKey": "livesportsontv:1953495",
+      "title": "Mozambique - Senegal",
+      "sport": "Soccer",
+      "sportSlug": "soccer",
+      "league": "Africa Cup of Nations Qualifier",
+      "leagueSlug": "africa-cup-of-nations-qualifier",
+      "homeTeam": "Mozambique",
+      "awayTeam": "Senegal",
+      "startAtUtc": "2026-09-25T13:00:00.000Z",
+      "status": null,
+      "venue": null,
+      "channels": [
+        {
+          "id": "1953495:1",
+          "name": "beIN SPORTS Xtra",
+          "countryCode": "US",
+          "displayName": "[US] beIN SPORTS Xtra",
+          "slug": null,
+          "type": "tv",
+          "broadcastStartUtc": null,
+          "sourceUrl": null
+        }
+      ],
+      "sourceUpdatedAt": null,
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
+      "sourceUrl": "https://www.livesportsontv.com/match/mozambique-senegal-1953495"
     },
     {
       "source": "livesportsontv",
@@ -14017,7 +12707,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/tanzania-guinea-bissau-1953499"
     },
     {
@@ -14057,8 +12747,48 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/road-world-championships-1971240"
+    },
+    {
+      "source": "livesportsontv",
+      "sourceId": "1974761",
+      "sourceKey": "livesportsontv:1974761",
+      "title": "Indonesia - Singapore",
+      "sport": "Soccer",
+      "sportSlug": "soccer",
+      "league": "ASEAN Cup",
+      "leagueSlug": "asean-cup",
+      "homeTeam": "Indonesia",
+      "awayTeam": "Singapore",
+      "startAtUtc": "2026-09-25T13:00:00.000Z",
+      "status": null,
+      "venue": null,
+      "channels": [
+        {
+          "id": "1974761:1",
+          "name": "DAZN",
+          "countryCode": "US",
+          "displayName": "[US] DAZN",
+          "slug": null,
+          "type": "streaming",
+          "broadcastStartUtc": null,
+          "sourceUrl": "https://www.livesportsontv.com/go?channel=dazn_lsot"
+        },
+        {
+          "id": "1974761:2",
+          "name": "DAZN Canada",
+          "countryCode": "CA",
+          "displayName": "[CA] DAZN Canada",
+          "slug": null,
+          "type": "streaming",
+          "broadcastStartUtc": null,
+          "sourceUrl": "https://www.livesportsontv.com/go?channel=dazn_ca_lsot"
+        }
+      ],
+      "sourceUpdatedAt": null,
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
+      "sourceUrl": "https://www.livesportsontv.com/match/indonesia-singapore-1974761"
     },
     {
       "source": "livesportsontv",
@@ -14087,7 +12817,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/global-champions-tour-1969210"
     },
     {
@@ -14127,7 +12857,7 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/one-friday-fights-1965881"
     },
     {
@@ -14177,8 +12907,38 @@
         }
       ],
       "sourceUpdatedAt": null,
-      "scrapedAt": "2026-09-21T20:16:29.229Z",
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
       "sourceUrl": "https://www.livesportsontv.com/match/walmart-nw-arkansas-championship-1966367"
+    },
+    {
+      "source": "livesportsontv",
+      "sourceId": "1971863",
+      "sourceKey": "livesportsontv:1971863",
+      "title": "Global Champions Tour",
+      "sport": "Equestrian",
+      "sportSlug": "equestrian",
+      "league": "Show Jumping",
+      "leagueSlug": "show-jumping",
+      "homeTeam": null,
+      "awayTeam": null,
+      "startAtUtc": "2026-09-25T15:05:00.000Z",
+      "status": null,
+      "venue": null,
+      "channels": [
+        {
+          "id": "1971863:1",
+          "name": "DAZN",
+          "countryCode": "US",
+          "displayName": "[US] DAZN",
+          "slug": null,
+          "type": "streaming",
+          "broadcastStartUtc": null,
+          "sourceUrl": "https://www.livesportsontv.com/go?channel=dazn_lsot"
+        }
+      ],
+      "sourceUpdatedAt": null,
+      "scrapedAt": "2026-09-24T19:48:30.886Z",
+      "sourceUrl": "https://www.livesportsontv.com/match/global-champions-tour-1971863"
     },
     {
       "source": "livesportsontv",
