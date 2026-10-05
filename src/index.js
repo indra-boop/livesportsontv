@@ -1,6 +1,8 @@
 import { chromium } from "playwright";
 import {
   addUtcDays,
+  assertDayCoverage,
+  createSettleTracker,
   loadStore,
   mergeFixtures,
   resolveNavigationStart,
@@ -14,6 +16,24 @@ const SOURCE_URL = "https://www.livesportsontv.com/";
 const NUM_DAYS = parseInteger(process.env.NUM_DAYS || "7", "NUM_DAYS", 1, 10);
 const OUTPUT_FILE = process.env.OUTPUT_FILE || "data/fixtures.json";
 const NAVIGATION_TIMEOUT_MS = 60_000;
+// How long one day's list may take to load after its date button is clicked.
+const DAY_LOAD_TIMEOUT_MS = parseInteger(
+  process.env.DAY_LOAD_TIMEOUT_MS || "20000",
+  "DAY_LOAD_TIMEOUT_MS",
+  1_000,
+  120_000
+);
+// Days allowed to come back empty before the run fails (0 = every day must load).
+const MAX_EMPTY_DAYS = parseInteger(
+  process.env.MAX_EMPTY_DAYS || "0",
+  "MAX_EMPTY_DAYS",
+  0,
+  10
+);
+const DAY_POLL_INTERVAL_MS = 300;
+const DAY_STABLE_POLLS = 3;
+// Re-selecting the day already shown returns the same list; accept it after ~3 s.
+const SAME_DAY_GRACE_POLLS = 10;
 
 const runAt = new Date();
 const browser = await chromium.launch({ headless: true });
@@ -85,14 +105,36 @@ async function scrapeDays(page, scrapedAt) {
   const firstButtonText = (await dateButtons.first().innerText()).trim();
   const navigationStart = resolveNavigationStart(firstButtonText, scrapedAt);
 
+  const dayCounts = [];
+
   for (let dayIndex = 0; dayIndex < NUM_DAYS; dayIndex += 1) {
     const button = dateButtons.nth(dayIndex);
     const buttonText = (await button.innerText()).trim();
+    const dayLabel = buttonText.replace(/\s+/g, " ");
     const eventDate = addUtcDays(navigationStart, dayIndex);
 
     validateButtonDate(buttonText, eventDate);
-    await button.click({ force: true });
-    await page.waitForTimeout(1_200);
+
+    // The first day is usually rendered already; skip the click when the site
+    // marks it active, otherwise the click reloads the same list.
+    const alreadyActive =
+      dayIndex === 0 &&
+      (await button.evaluate((element) =>
+        /(^|\s)DatePicker_active__/.test(String(element.className))
+      ));
+    const signatureBeforeClick = await readListSignature(page);
+    if (!alreadyActive) await button.click({ force: true });
+
+    const { settled, signature } = await waitForDayList(page, {
+      changedFrom: alreadyActive ? null : signatureBeforeClick,
+      unchangedGracePolls: dayIndex === 0 ? SAME_DAY_GRACE_POLLS : Infinity
+    });
+    if (!settled && signature !== "") {
+      throw new Error(
+        `Day ${dayIndex + 1}/${NUM_DAYS} ${dayLabel}: fixture list did not ` +
+          `change and settle within ${DAY_LOAD_TIMEOUT_MS} ms after selecting the date`
+      );
+    }
 
     const rawEvents = await page.evaluate(() => {
       const sportBlocks = [
@@ -186,12 +228,50 @@ async function scrapeDays(page, scrapedAt) {
       validForDay += 1;
     }
 
+    dayCounts.push({ label: dayLabel, count: validForDay });
     console.log(
-      `Day ${dayIndex + 1}/${NUM_DAYS} ${buttonText}: ${validForDay} fixtures`
+      `Day ${dayIndex + 1}/${NUM_DAYS} ${dayLabel}: ${validForDay} fixtures`
     );
   }
 
+  assertDayCoverage(dayCounts, MAX_EMPTY_DAYS);
+
   return [...collected.values()];
+}
+
+async function readListSignature(page) {
+  return page.evaluate(() =>
+    [
+      ...document.querySelectorAll(
+        '[class*="FixtureItem_container__"] a[href^="/match/"]'
+      )
+    ]
+      .map((link) => link.getAttribute("href"))
+      .join("|")
+  );
+}
+
+/**
+ * Wait until the list for the selected day is loaded: non-empty, unchanged
+ * across several polls, and different from the list shown before the click.
+ * `settled: false` with an empty signature means the day stayed empty.
+ */
+async function waitForDayList(page, { changedFrom, unchangedGracePolls }) {
+  const tracker = createSettleTracker({
+    stablePolls: DAY_STABLE_POLLS,
+    changedFrom,
+    unchangedGracePolls
+  });
+  const deadline = Date.now() + DAY_LOAD_TIMEOUT_MS;
+  let signature = "";
+
+  while (Date.now() < deadline) {
+    await page.waitForTimeout(DAY_POLL_INTERVAL_MS);
+    signature = await readListSignature(page);
+    if (tracker.push(signature)) return { settled: true, signature };
+  }
+
+  return { settled: false, signature };
 }
 
 function normalizeRenderedEvent(rawEvent, eventDate, scrapedAt) {

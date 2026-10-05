@@ -71,6 +71,59 @@ export function addUtcDays(date, days) {
   ));
 }
 
+/**
+ * Decides when the rendered fixture list of a newly selected day has finished
+ * loading. The site clears the list after a date click and fills it again a
+ * few seconds later, so a fixed sleep reads an empty (or the previous day's)
+ * list. Feed it one signature per poll; it reports true once the list is
+ * non-empty, stayed identical for `stablePolls` polls in a row, and differs
+ * from `changedFrom` (the list shown before the click).
+ *
+ * `unchangedGracePolls` covers re-selecting the day that is already shown: the
+ * same list is expected back, so after that many polls an unchanged list is
+ * accepted. Leave it at Infinity when a different day was selected, so the
+ * previous day's fixtures can never be stamped with the new day's date.
+ */
+export function createSettleTracker({
+  stablePolls = 3,
+  changedFrom = null,
+  unchangedGracePolls = Infinity
+} = {}) {
+  let last = null;
+  let streak = 0;
+  let polls = 0;
+
+  return {
+    push(signature) {
+      const value = String(signature ?? "");
+      polls += 1;
+      if (value === last) {
+        streak += 1;
+      } else {
+        last = value;
+        streak = 1;
+      }
+      if (value === "" || streak < stablePolls) return false;
+      return value !== changedFrom || polls >= unchangedGracePolls;
+    }
+  };
+}
+
+/**
+ * Fails the run when more days than allowed came back without fixtures.
+ * Without this a broken day navigation still looks like a successful run.
+ */
+export function assertDayCoverage(dayCounts, maxEmptyDays = 0) {
+  const days = Array.isArray(dayCounts) ? dayCounts : [];
+  const empty = days.filter((day) => !(day?.count > 0)).map((day) => day?.label);
+  if (empty.length > maxEmptyDays) {
+    throw new Error(
+      `Day coverage guard: ${empty.length} of ${days.length} days returned 0 fixtures ` +
+        `(${empty.join(", ")}); allowed ${maxEmptyDays}`
+    );
+  }
+}
+
 export function normalizeFixture(fixture, scrapedAt = new Date().toISOString()) {
   if (!fixture || fixture.fixture_id == null) return null;
 
