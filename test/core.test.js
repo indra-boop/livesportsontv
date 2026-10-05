@@ -2,6 +2,8 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {
   addUtcDays,
+  assertDayCoverage,
+  createSettleTracker,
   mergeFixtures,
   normalizeFixture,
   parseDateButtonLabel,
@@ -135,4 +137,102 @@ test("date navigation still fails closed on a wrong weekday or distant date", ()
     () => resolveNavigationStart("FRI 21", runAt),
     /outside the WITA adjacent-day window/
   );
+});
+
+test("settle tracker waits for a non-empty list that stays the same", () => {
+  const tracker = createSettleTracker({ stablePolls: 3 });
+
+  // List is cleared right after the date click, then fills in.
+  assert.equal(tracker.push(""), false);
+  assert.equal(tracker.push(""), false);
+  assert.equal(tracker.push(""), false);
+  assert.equal(tracker.push("/match/a-1"), false);
+  assert.equal(tracker.push("/match/a-1|/match/b-2"), false);
+  assert.equal(tracker.push("/match/a-1|/match/b-2"), false);
+  assert.equal(tracker.push("/match/a-1|/match/b-2"), true);
+});
+
+test("settle tracker never accepts the list shown before the click", () => {
+  const previousDay = "/match/a-1|/match/b-2";
+  const tracker = createSettleTracker({ stablePolls: 2, changedFrom: previousDay });
+
+  // Previous day's list is still on screen: stable, but it is the wrong day.
+  for (let poll = 0; poll < 5; poll += 1) {
+    assert.equal(tracker.push(previousDay), false);
+  }
+  assert.equal(tracker.push(""), false);
+  assert.equal(tracker.push("/match/c-3"), false);
+  assert.equal(tracker.push("/match/c-3"), true);
+});
+
+test("settle tracker restarts its count when the list changes", () => {
+  const tracker = createSettleTracker({ stablePolls: 3 });
+
+  assert.equal(tracker.push("/match/a-1"), false);
+  assert.equal(tracker.push("/match/a-1"), false);
+  assert.equal(tracker.push("/match/a-1|/match/b-2"), false);
+  assert.equal(tracker.push("/match/a-1|/match/b-2"), false);
+  assert.equal(tracker.push("/match/a-1|/match/b-2"), true);
+});
+
+test("settle tracker accepts the same list again only after the grace period", () => {
+  const sameDay = "/match/a-1|/match/b-2";
+  const tracker = createSettleTracker({
+    stablePolls: 2,
+    changedFrom: sameDay,
+    unchangedGracePolls: 4
+  });
+
+  // Re-selecting the day already shown: no reload happens, list stays as is.
+  assert.equal(tracker.push(sameDay), false);
+  assert.equal(tracker.push(sameDay), false);
+  assert.equal(tracker.push(sameDay), false);
+  assert.equal(tracker.push(sameDay), true);
+});
+
+test("settle tracker waits out a reload that brings the same list back", () => {
+  const sameDay = "/match/a-1|/match/b-2";
+  const tracker = createSettleTracker({
+    stablePolls: 3,
+    changedFrom: sameDay,
+    unchangedGracePolls: 4
+  });
+
+  assert.equal(tracker.push(sameDay), false);
+  assert.equal(tracker.push(""), false);
+  assert.equal(tracker.push(""), false);
+  assert.equal(tracker.push(""), false);
+  assert.equal(tracker.push(sameDay), false);
+  assert.equal(tracker.push(sameDay), false);
+  assert.equal(tracker.push(sameDay), true);
+});
+
+test("day coverage guard fails a run that silently lost days", () => {
+  // Shape of the 2026-10-04 run: only the first two days returned fixtures.
+  const degraded = [
+    { label: "SUN 04", count: 594 },
+    { label: "MON 05", count: 118 },
+    { label: "TUE 06", count: 0 },
+    { label: "WED 07", count: 0 },
+    { label: "THU 08", count: 0 },
+    { label: "FRI 09", count: 0 },
+    { label: "SAT 10", count: 0 }
+  ];
+
+  assert.throws(
+    () => assertDayCoverage(degraded, 0),
+    /Day coverage guard: 5 of 7 days returned 0 fixtures \(TUE 06, WED 07, THU 08, FRI 09, SAT 10\); allowed 0/
+  );
+});
+
+test("day coverage guard passes full runs and honours the allowance", () => {
+  const full = [
+    { label: "MON 05", count: 224 },
+    { label: "TUE 06", count: 45 }
+  ];
+  const oneEmpty = [...full, { label: "WED 07", count: 0 }];
+
+  assert.doesNotThrow(() => assertDayCoverage(full, 0));
+  assert.throws(() => assertDayCoverage(oneEmpty, 0), /1 of 3 days/);
+  assert.doesNotThrow(() => assertDayCoverage(oneEmpty, 1));
 });
