@@ -15,6 +15,9 @@ TV/streaming channels rendered on LiveSportsOnTV.
   the run when a day in the window comes back with 0 fixtures.
 - Keeps all stored timestamps in UTC.
 - Does not use `RONIN_API_TOKEN` or any private API credential.
+- Captures `venue` from the same public `fixtures` / `fixtures/grouped` JSON
+  responses the site loads in the browser (leave blank when the feed has none;
+  drop placeholder labels like `AL Stadium, AL City`).
 
 ## Local usage
 

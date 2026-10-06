@@ -2,9 +2,11 @@ import { chromium } from "playwright";
 import {
   addUtcDays,
   assertDayCoverage,
+  collectVenuesFromApiPayload,
   createSettleTracker,
   loadStore,
   mergeFixtures,
+  normalizeVenueName,
   resolveNavigationStart,
   SOURCE,
   validateButtonDate,
@@ -38,6 +40,7 @@ const SAME_DAY_GRACE_POLLS = 10;
 const runAt = new Date();
 const browser = await chromium.launch({ headless: true });
 let scrapedFixtures;
+const venuesById = new Map();
 
 try {
   const context = await browser.newContext({
@@ -48,6 +51,17 @@ try {
       "(KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
   });
   const page = await context.newPage();
+  page.on("response", async (response) => {
+    try {
+      const url = response.url();
+      if (response.status() !== 200) return;
+      if (!/api2\.roninmedia\.io\/2\/fixtures(\/grouped)?\?/.test(url)) return;
+      const payload = await response.json();
+      collectVenuesFromApiPayload(payload, venuesById);
+    } catch {
+      // Ignore non-JSON or aborted responses; venue stays blank.
+    }
+  });
 
   await page.goto(SOURCE_URL, {
     waitUntil: "domcontentloaded",
@@ -58,7 +72,7 @@ try {
     timeout: NAVIGATION_TIMEOUT_MS
   });
 
-  scrapedFixtures = await scrapeDays(page, runAt);
+  scrapedFixtures = await scrapeDays(page, runAt, venuesById);
 } finally {
   await browser.close();
 }
@@ -88,11 +102,13 @@ await writeStoreAtomic(OUTPUT_FILE, {
   fixtures: mergedFixtures
 });
 
+const venueFilled = mergedFixtures.filter((fixture) => fixture.venue).length;
 console.log(
-  `Saved ${mergedFixtures.length} fixtures (${scrapedFixtures.length} scraped) to ${OUTPUT_FILE}`
+  `Saved ${mergedFixtures.length} fixtures (${scrapedFixtures.length} scraped, ` +
+    `${venueFilled} with venue, ${venuesById.size} venue ids from API) to ${OUTPUT_FILE}`
 );
 
-async function scrapeDays(page, scrapedAt) {
+async function scrapeDays(page, scrapedAt, venuesById = new Map()) {
   const collected = new Map();
   const dateButtons = page
     .locator("button")
@@ -135,6 +151,9 @@ async function scrapeDays(page, scrapedAt) {
           `change and settle within ${DAY_LOAD_TIMEOUT_MS} ms after selecting the date`
       );
     }
+
+    // Give the site's fixtures/grouped response a moment after the list settles.
+    await page.waitForTimeout(400);
 
     const rawEvents = await page.evaluate(() => {
       const sportBlocks = [
@@ -220,7 +239,8 @@ async function scrapeDays(page, scrapedAt) {
       const normalized = normalizeRenderedEvent(
         rawEvent,
         eventDate,
-        scrapedAt.toISOString()
+        scrapedAt.toISOString(),
+        venuesById
       );
       if (!normalized) continue;
 
@@ -274,7 +294,7 @@ async function waitForDayList(page, { changedFrom, unchangedGracePolls }) {
   return { settled: false, signature };
 }
 
-function normalizeRenderedEvent(rawEvent, eventDate, scrapedAt) {
+function normalizeRenderedEvent(rawEvent, eventDate, scrapedAt, venuesById = new Map()) {
   const sourceId = rawEvent.href.match(/-(\d+)$/)?.[1];
   const startAtUtc = parseWitaDateTime(eventDate, rawEvent.time);
   if (!sourceId || !startAtUtc || !rawEvent.title || !rawEvent.sport) {
@@ -311,7 +331,7 @@ function normalizeRenderedEvent(rawEvent, eventDate, scrapedAt) {
     awayTeam,
     startAtUtc,
     status: null,
-    venue: null,
+    venue: normalizeVenueName(venuesById.get(String(sourceId))) || null,
     channels,
     sourceUpdatedAt: null,
     scrapedAt,

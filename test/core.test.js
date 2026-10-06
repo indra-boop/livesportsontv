@@ -3,9 +3,11 @@ import assert from "node:assert/strict";
 import {
   addUtcDays,
   assertDayCoverage,
+  collectVenuesFromApiPayload,
   createSettleTracker,
   mergeFixtures,
   normalizeFixture,
+  normalizeVenueName,
   parseDateButtonLabel,
   resolveNavigationStart,
   validateButtonDate
@@ -236,3 +238,78 @@ test("day coverage guard passes full runs and honours the allowance", () => {
   assert.throws(() => assertDayCoverage(oneEmpty, 0), /1 of 3 days/);
   assert.doesNotThrow(() => assertDayCoverage(oneEmpty, 1));
 });
+
+test("normalizeVenueName drops blanks and AL/NL placeholders", () => {
+  assert.equal(normalizeVenueName("  Honda Center  "), "Honda Center");
+  assert.equal(normalizeVenueName(""), null);
+  assert.equal(normalizeVenueName(null), null);
+  assert.equal(normalizeVenueName("AL Stadium, AL City"), null);
+  assert.equal(normalizeVenueName("NL Stadium, NL City"), null);
+});
+
+test("collectVenuesFromApiPayload indexes non-empty venues by fixture_id", () => {
+  const map = collectVenuesFromApiPayload([
+    { fixture_id: 1, title: "A - B", venue: "Arena One" },
+    { fixture_id: 2, title: "C - D", venue: "" },
+    { fixture_id: 3, title: "E - F", venue: "NL Stadium, NL City" },
+    {
+      sport: "Soccer",
+      leagues: [{ fixtures: [{ fixture_id: 4, venue: "Nested Park" }] }]
+    }
+  ]);
+  assert.equal(map.get("1"), "Arena One");
+  assert.equal(map.has("2"), false);
+  assert.equal(map.has("3"), false);
+  assert.equal(map.get("4"), "Nested Park");
+});
+
+test("normalizeFixture maps venue through normalizeVenueName", () => {
+  const withVenue = normalizeFixture(
+    {
+      fixture_id: 7,
+      title: "Home - Away",
+      date: "2026-08-01T12:00:00.000Z",
+      sport: "Soccer",
+      venue: "  Park Name  ",
+      channels: []
+    },
+    NOW.toISOString()
+  );
+  assert.equal(withVenue.venue, "Park Name");
+
+  const placeholder = normalizeFixture(
+    {
+      fixture_id: 8,
+      title: "Home - Away",
+      date: "2026-08-01T12:00:00.000Z",
+      sport: "Baseball",
+      venue: "AL Stadium, AL City",
+      channels: []
+    },
+    NOW.toISOString()
+  );
+  assert.equal(placeholder.venue, null);
+});
+
+test("mergeFixtures keeps previous venue when incoming venue is blank", () => {
+  const existing = [
+    {
+      sourceKey: "livesportsontv:42",
+      title: "Old",
+      startAtUtc: "2026-08-01T12:00:00.000Z",
+      venue: "Kept Arena"
+    }
+  ];
+  const incoming = [
+    {
+      sourceKey: "livesportsontv:42",
+      title: "New",
+      startAtUtc: "2026-08-01T12:00:00.000Z",
+      venue: null
+    }
+  ];
+  const merged = mergeFixtures(existing, incoming, NOW);
+  assert.equal(merged[0].title, "New");
+  assert.equal(merged[0].venue, "Kept Arena");
+});
+

@@ -124,6 +124,36 @@ export function assertDayCoverage(dayCounts, maxEmptyDays = 0) {
   }
 }
 
+/**
+ * Build fixture_id -> venue from Ronin fixtures / fixtures/grouped payloads
+ * that the public site already loads in the browser. Empty strings and known
+ * placeholder labels ("AL Stadium, AL City") are treated as missing.
+ */
+export function normalizeVenueName(value) {
+  const text = String(value ?? "").replace(/\s+/g, " ").trim();
+  if (!text) return null;
+  if (/^(AL|NL)\s+Stadium,\s+(AL|NL)\s+City$/i.test(text)) return null;
+  return text;
+}
+
+export function collectVenuesFromApiPayload(payload, into = new Map()) {
+  const visit = (node) => {
+    if (Array.isArray(node)) {
+      for (const item of node) visit(item);
+      return;
+    }
+    if (!node || typeof node !== "object") return;
+    const id = node.fixture_id;
+    if (id != null) {
+      const venue = normalizeVenueName(node.venue);
+      if (venue) into.set(String(id), venue);
+    }
+    for (const value of Object.values(node)) visit(value);
+  };
+  visit(payload);
+  return into;
+}
+
 export function normalizeFixture(fixture, scrapedAt = new Date().toISOString()) {
   if (!fixture || fixture.fixture_id == null) return null;
 
@@ -156,7 +186,7 @@ export function normalizeFixture(fixture, scrapedAt = new Date().toISOString()) 
     awayTeam: fixture.visiting_team || null,
     startAtUtc,
     status: fixture.status || null,
-    venue: fixture.venue || null,
+    venue: normalizeVenueName(fixture.venue),
     channels,
     sourceUpdatedAt: toIsoOrNull(fixture.last_updated),
     scrapedAt
@@ -175,7 +205,13 @@ export function mergeFixtures(existingFixtures, incomingFixtures, now = new Date
   }
 
   for (const fixture of incomingFixtures) {
-    if (fixture?.sourceKey) merged.set(fixture.sourceKey, fixture);
+    if (!fixture?.sourceKey) continue;
+    const previous = merged.get(fixture.sourceKey);
+    if (previous?.venue && !fixture.venue) {
+      merged.set(fixture.sourceKey, { ...fixture, venue: previous.venue });
+    } else {
+      merged.set(fixture.sourceKey, fixture);
+    }
   }
 
   const retentionThreshold = now.getTime() - RETENTION_MS;
