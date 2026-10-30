@@ -32,7 +32,7 @@ concurrency:
 
 jobs:
   scrape:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, jerco-public, linode]
     timeout-minutes: 20
     env:
       DASHBOARD_INGEST_URL: https://schedule.jerconetwork.com/api/ingest/v2
@@ -63,7 +63,7 @@ jobs:
         run: npm ci
 
       - name: Install Chromium
-        run: npx playwright install --with-deps chromium
+        run: npx playwright install chromium
 
       - name: Run tests
         run: npm test
